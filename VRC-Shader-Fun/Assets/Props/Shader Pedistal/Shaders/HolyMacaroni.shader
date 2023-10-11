@@ -3,7 +3,6 @@
  * Lilithe followed the tutorial at https://www.youtube.com/watch?v=S8AWd66hoCo
  */
 
-
 Shader "Unlit/HolyMacaroni" {
 	Properties {
 		// _MainTex("Texture", 2D) = "white" {} /* Texture is unused in this one */
