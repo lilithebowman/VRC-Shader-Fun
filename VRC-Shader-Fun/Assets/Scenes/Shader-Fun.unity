@@ -486,12 +486,12 @@ MonoBehaviour:
   useAssignedLayers: 0
   DynamicPrefabs: []
   DynamicMaterials:
-  - {fileID: 2100000, guid: 1e9411062698ebb4cbca6451a45a0d21, type: 2}
+  - {fileID: 2100000, guid: eaa9b109ae8e7e141bff6e7187ab9ee4, type: 2}
   - {fileID: 2100000, guid: 83c456bd6a4e38e4bb1854336f28edb3, type: 2}
   - {fileID: 2100000, guid: 181c4cb281aa2d1488ccd68e7bfa4b9b, type: 2}
-  - {fileID: 2100000, guid: 04d6fad194ea8b542b67e337d080e740, type: 2}
-  - {fileID: 2100000, guid: eaa9b109ae8e7e141bff6e7187ab9ee4, type: 2}
   - {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
+  - {fileID: 2100000, guid: 04d6fad194ea8b542b67e337d080e740, type: 2}
+  - {fileID: 2100000, guid: 1e9411062698ebb4cbca6451a45a0d21, type: 2}
   LightMapsNear: []
   LightMapsFar: []
   LightMode: 0
@@ -852,7 +852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316455502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2243888, y: 0.6698554, z: 0.065820806}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -907,7 +907,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1316455505}
   probeGameObject: {fileID: 1316455502}
-  offset: {x: 0, y: 0, z: 1}
+  offset: {x: 0, y: 0, z: 0}
   betweenEyes: {x: 0, y: 0, z: 0}
   head: {x: 0, y: 0, z: 0}
 --- !u!1 &1337461294 stripped

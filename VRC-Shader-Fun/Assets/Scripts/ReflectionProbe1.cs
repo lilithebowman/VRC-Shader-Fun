@@ -7,7 +7,7 @@ using VRC.Udon;
 public class ReflectionProbe1 : UdonSharpBehaviour
 {
     public GameObject probeGameObject;
-    public Vector3 offset = new Vector3(0.0f, 0.0f, 1.0f);
+    public Vector3 offset = new Vector3(0.0f, 0.0f, 0.0f);
     public Vector3 betweenEyes;
     public Vector3 head;
 
