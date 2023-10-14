@@ -987,6 +987,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   betweenEyes: {x: 0, y: 0, z: 0}
   head: {x: 0, y: 0, z: 0}
+  renderInterval: 1
+  intervalCounter: 0
 --- !u!1 &1337461294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3653820861185211939, guid: 47c3626d88847514f92f74a3af4b937d,

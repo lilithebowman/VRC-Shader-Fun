@@ -10,6 +10,10 @@ public class ReflectionProbe1 : UdonSharpBehaviour
     public Vector3 betweenEyes;
     public Vector3 head;
 
+    public int renderInterval = 1;
+    private ReflectionProbe probeComponent;
+    public int intervalCounter;
+
     private VRCPlayerApi playerLocal;
     void Start() {
 #if UNITY_STANDALONE
@@ -20,6 +24,13 @@ public class ReflectionProbe1 : UdonSharpBehaviour
         probeGameObject.SetActive(false);
 #endif
         playerLocal = Networking.LocalPlayer;
+
+        intervalCounter = renderInterval;
+        if (probeGameObject)
+        {
+            // Add the reflection probe component
+            probeComponent = probeGameObject.GetComponent<ReflectionProbe>();
+        }
     }
 
     void LateUpdate() {
@@ -41,6 +52,14 @@ public class ReflectionProbe1 : UdonSharpBehaviour
                 playerLocal.GetPosition().y + 2.0f,
                 playerLocal.GetPosition().z
             );
+        }
+        intervalCounter--;
+
+        if (intervalCounter == 0)
+        {
+            probeComponent.RenderProbe();
+            Debug.Log("Realtime Reflection Probe Updated");
+            intervalCounter = renderInterval;
         }
     }
 }
