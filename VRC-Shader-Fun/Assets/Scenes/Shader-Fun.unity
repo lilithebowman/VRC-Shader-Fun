@@ -491,8 +491,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 04d6fad194ea8b542b67e337d080e740, type: 2}
   - {fileID: 2100000, guid: 83c456bd6a4e38e4bb1854336f28edb3, type: 2}
   - {fileID: 2100000, guid: 181c4cb281aa2d1488ccd68e7bfa4b9b, type: 2}
-  - {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
   - {fileID: 2100000, guid: fdd43f4ad3459b94abcaaa2cb34e73af, type: 2}
+  - {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
   LightMapsNear: []
   LightMapsFar: []
   LightMode: 0
@@ -899,7 +899,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 2
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
@@ -912,7 +912,7 @@ ReflectionProbe:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4426023
   m_IntensityMultiplier: 1
   m_BlendDistance: 1
   m_HDR: 1
