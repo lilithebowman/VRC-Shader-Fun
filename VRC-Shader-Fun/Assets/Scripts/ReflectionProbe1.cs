@@ -58,7 +58,6 @@ public class ReflectionProbe1 : UdonSharpBehaviour
         if (intervalCounter == 0)
         {
             probeComponent.RenderProbe();
-            Debug.Log("Realtime Reflection Probe Updated");
             intervalCounter = renderInterval;
         }
     }
