@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Flat Floor Clear
-  m_Shader: {fileID: 4800000, guid: 044744ced35f660428c5b5f0477a6e1d, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _BAKERY_NONE _LIGHTMAPSPECULAR _NORMALMAP
+  m_Shader: {fileID: 4800000, guid: 9829e18681954944a8b25de9b080a0b6, type: 3}
+  m_ShaderKeywords: _BAKERY_NONE _LIGHTMAPSPECULAR _STEREOENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 9df48d6295ffc6e4b88197a192f93ab5, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DFG:
@@ -41,15 +41,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 10000, y: 10000}
+        m_Scale: {x: 1, y: 4}
         m_Offset: {x: 0, y: 0}
     - _MOESMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 10000, y: 10000}
+        m_Texture: {fileID: 2800000, guid: 9ae7399f0cf902a41a20f3487af8322a, type: 3}
+        m_Scale: {x: 1, y: 4}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -76,23 +76,29 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaToMaskMode: 0
     - _Bakery: 0
     - _BumpScale: -0.2
+    - _BumpShadowHardness: 50
+    - _BumpShadowHeightScale: 0.2
     - _CullMode: 2
     - _Cutoff: 0.5
+    - _Cutout: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _Emission: 0
+    - _EnableEmission: 0
     - _ExposureOcclusion: 0.2
     - _GlossMapScale: 1
-    - _Glossiness: 0.499
+    - _Glossiness: 0.86
     - _GlossyReflections: 1
     - _LTCGI: 0
     - _LightmapSpecular: 1
     - _LightmapSpecularMaxSmoothness: 1
-    - _Metallic: 0.737
+    - _Metallic: 0.767
     - _MetallicScale: 0.321
-    - _Mode: 3
+    - _Mode: 0
+    - _NormalMapShadows: 0
     - _OcclusionScale: 0.487
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -100,10 +106,16 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StereoEnabled: 1
+    - _Thickness: 1
+    - _TorusSize: 1
+    - _Tuner: 1
     - _UVSec: 0
-    - _ZWrite: 0
+    - _ZWrite: 1
+    - _specularAntiAliasingThreshold: 0.25
+    - _specularAntiAliasingVariance: 0.15
     m_Colors:
-    - _Color: {r: 0.3843137, g: 0.43942922, b: 0.5960784, a: 0.27058825}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _UVTransform0: {r: 1, g: 0, b: 0, a: 0}
     - _UVTransform1: {r: 0, g: 1, b: 0, a: 0}
