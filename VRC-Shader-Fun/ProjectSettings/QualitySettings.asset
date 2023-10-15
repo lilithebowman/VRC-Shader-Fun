@@ -4,11 +4,11 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 2
+  m_CurrentQuality: 3
   m_QualitySettings:
   - serializedVersion: 2
     name: VRC Low
-    pixelLightCount: 4
+    pixelLightCount: 1
     shadows: 2
     shadowResolution: 1
     shadowProjection: 1
@@ -45,7 +45,7 @@ QualitySettings:
     - Android
   - serializedVersion: 2
     name: VRC Medium
-    pixelLightCount: 4
+    pixelLightCount: 2
     shadows: 2
     shadowResolution: 2
     shadowProjection: 1
@@ -82,7 +82,7 @@ QualitySettings:
     - Android
   - serializedVersion: 2
     name: VRC High
-    pixelLightCount: 8
+    pixelLightCount: 3
     shadows: 2
     shadowResolution: 3
     shadowProjection: 1
@@ -119,7 +119,7 @@ QualitySettings:
     - Android
   - serializedVersion: 2
     name: VRC Mobile
-    pixelLightCount: 4
+    pixelLightCount: 3
     shadows: 0
     shadowResolution: 1
     shadowProjection: 1
@@ -135,7 +135,7 @@ QualitySettings:
     antiAliasing: 2
     softParticles: 0
     softVegetation: 0
-    realtimeReflectionProbes: 0
+    realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
     vSyncCount: 0
     lodBias: 2
