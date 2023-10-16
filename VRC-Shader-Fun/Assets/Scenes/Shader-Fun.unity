@@ -1547,7 +1547,7 @@ PrefabInstance:
     - target: {fileID: 3357978092449080242, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_Name
-      value: Udon Ripple Shader Pedistal
+      value: Liquid Container Shader Pedistal
       objectReference: {fileID: 0}
     - target: {fileID: 5785637227233167610, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
