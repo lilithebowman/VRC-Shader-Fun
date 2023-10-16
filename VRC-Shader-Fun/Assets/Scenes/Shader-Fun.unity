@@ -1294,6 +1294,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1171799881}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1793981699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 574261569708572652, guid: 1328307701bc8d64097e13e11cbf2422,
+    type: 3}
+  m_PrefabInstance: {fileID: 2050731879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1793981700
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793981699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0062908763
+  m_Center: {x: -0.0000000013969839, y: 0.000000001629815, z: 0.001290873}
 --- !u!1 &2014490512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4180216286286513429, guid: 47c3626d88847514f92f74a3af4b937d,
@@ -1434,6 +1453,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 574261569708572652, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -1494,11 +1518,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Udon Ripple Shader Pedistal
       objectReference: {fileID: 0}
+    - target: {fileID: 5785637227233167610, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6480064311710396362, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5818b52ab4bee9341860988a8464fcef, type: 2}
+      objectReference: {fileID: 2100000, guid: 107adb3f720230f41b8050df2a27fa7f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1328307701bc8d64097e13e11cbf2422, type: 3}
 --- !u!1001 &2474875987862292539
