@@ -63,6 +63,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - BAKERY_META_ALPHA_ENABLE: 1
+    - FillSlider: 0
     - _AlphaToMask: 1
     - _BakeryMonoSH: 0
     - _BumpScale: 1
@@ -85,5 +86,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - SideColour: {r: 0.7792545, g: 0.117257, b: 0.8018868, a: 1}
+    - TopColour: {r: 0.9186706, g: 0.4713866, b: 0.9339623, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
