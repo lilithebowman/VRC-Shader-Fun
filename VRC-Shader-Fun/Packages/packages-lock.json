@@ -93,6 +93,29 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.render-pipelines.core": {
+      "version": "https://github.com/z3y/ShaderGraph.git?path=/com.unity.render-pipelines.core#2019",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "994a855f664028c6a98a53393c814f87f55c0460"
+    },
+    "com.unity.searcher": {
+      "version": "4.0.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.shadergraph": {
+      "version": "https://github.com/z3y/ShaderGraph.git?path=/com.unity.shadergraph#2019",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.searcher": "4.0.9"
+      },
+      "hash": "994a855f664028c6a98a53393c814f87f55c0460"
+    },
     "com.unity.test-framework": {
       "version": "1.1.29",
       "depth": 0,
@@ -177,6 +200,13 @@
         "com.unity.xr.oculus.standalone": "2.38.4",
         "com.unity.inputsystem": "1.2.0"
       }
+    },
+    "com.z3y.shadergraphex": {
+      "version": "https://github.com/z3y/ShaderGraph.git?path=/com.z3y.shadergraphex#2019",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "994a855f664028c6a98a53393c814f87f55c0460"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
