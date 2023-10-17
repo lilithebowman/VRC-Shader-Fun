@@ -617,10 +617,76 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7996583097796837202, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_Name
       value: Liquid Shader Graph
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+    - target: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: _udonSharpBackingUdonBehaviour
+      value: 
+      objectReference: {fileID: 478402729}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183557758675977924, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1328307701bc8d64097e13e11cbf2422, type: 3}
@@ -630,6 +696,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 478402727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &478402729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1242042118116293663, guid: 1328307701bc8d64097e13e11cbf2422,
+    type: 3}
+  m_PrefabInstance: {fileID: 478402727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &484174630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,6 +2417,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reflective Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
     - target: {fileID: 9063354564631688311, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2464,6 +2548,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Shader
       objectReference: {fileID: 0}
+    - target: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
     - target: {fileID: 9175932874608332325, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2592,6 +2682,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Holy Macaroni
       objectReference: {fileID: 0}
+    - target: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1328307701bc8d64097e13e11cbf2422, type: 3}
 --- !u!4 &2474875987862292540 stripped
