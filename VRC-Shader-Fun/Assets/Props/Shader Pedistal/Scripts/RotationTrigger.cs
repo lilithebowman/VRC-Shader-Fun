@@ -19,9 +19,13 @@ public class RotationTrigger : UdonSharpBehaviour {
     public void LateUpdate() {
         if (rotationObject != null && parentObject != null) {
             if (transform.position.y < parentObject.transform.position.y) {
-                rotationObject.GetComponent<ParticleSystem>().Play();
+                if (!rotationObject.GetComponent<ParticleSystem>().isPlaying) {
+                    rotationObject.GetComponent<ParticleSystem>().Play();
+                }
             } else {
-                rotationObject.GetComponent<ParticleSystem>().Stop();
+                if (rotationObject.GetComponent<ParticleSystem>().isPlaying) {
+                    rotationObject.GetComponent<ParticleSystem>().Stop();
+                }
             }
         }
     }
