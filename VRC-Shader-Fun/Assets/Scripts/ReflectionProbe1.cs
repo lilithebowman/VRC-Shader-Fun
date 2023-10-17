@@ -15,7 +15,14 @@ public class ReflectionProbe1 : UdonSharpBehaviour
     public int intervalCounter;
 
     private VRCPlayerApi playerLocal;
-    void Start() {
+    void Start()
+    {
+        intervalCounter = renderInterval;
+        if (probeGameObject)
+        {
+            // Add the reflection probe component
+            probeComponent = probeGameObject.GetComponent<ReflectionProbe>();
+        }
 #if UNITY_STANDALONE
         probeGameObject.SetActive(true);
         
@@ -28,13 +35,6 @@ public class ReflectionProbe1 : UdonSharpBehaviour
         probeComponent.mode = UnityEngine.Rendering.ReflectionProbeMode.Baked;
 #endif
         playerLocal = Networking.LocalPlayer;
-
-        intervalCounter = renderInterval;
-        if (probeGameObject)
-        {
-            // Add the reflection probe component
-            probeComponent = probeGameObject.GetComponent<ReflectionProbe>();
-        }
     }
 
     void LateUpdate() {
