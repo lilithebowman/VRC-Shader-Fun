@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 120366245}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18040368, g: 0.22585967, b: 0.30699262, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2219,21 +2219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1301792674}
     m_Modifications:
-    - target: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 574261569708572652, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -2259,90 +2244,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3357978092449080242, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_Name
-      value: Liquid Container Shader Pedistal
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_text
-      value: Just a reflective sphere
-      objectReference: {fileID: 0}
-    - target: {fileID: 5785637227233167610, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5897686852419195614, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480064311710396362, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 107adb3f720230f41b8050df2a27fa7f, type: 2}
     - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
@@ -2355,25 +2260,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8809498195742893497, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
-    - target: {fileID: 9063354564631688311, guid: 1328307701bc8d64097e13e11cbf2422,
+    - target: {fileID: 9175932874608332325, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
-      propertyPath: m_LocalScale.x
+      propertyPath: m_ReceiveShadows
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9063354564631688311, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9063354564631688311, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9063354564631688311, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9175932874608332325, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
@@ -2400,16 +2290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1301792674}
     m_Modifications:
-    - target: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -2465,16 +2345,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_text
-      value: Grass Shader Experiment
-      objectReference: {fileID: 0}
-    - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_Name
@@ -2506,16 +2376,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1301792674}
     m_Modifications:
-    - target: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -2535,79 +2395,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725310973958748424, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3357978092449080242, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_Name
-      value: Shader Pedistal Holy Macaroni
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_text
-      value: 'Holy Macaroni
-
-
-        My first Raymarching Experiment'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
