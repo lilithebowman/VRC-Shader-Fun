@@ -18,10 +18,14 @@ public class ReflectionProbe1 : UdonSharpBehaviour
     void Start() {
 #if UNITY_STANDALONE
         probeGameObject.SetActive(true);
+        
+        probeComponent.mode = UnityEngine.Rendering.ReflectionProbeMode.Realtime;
 #elif UNITY_EDITOR
         probeGameObject.SetActive(true);
+        
+        probeComponent.mode = UnityEngine.Rendering.ReflectionProbeMode.Realtime;
 #else
-        probeGameObject.SetActive(false);
+        probeComponent.mode = UnityEngine.Rendering.ReflectionProbeMode.Baked;
 #endif
         playerLocal = Networking.LocalPlayer;
 
@@ -53,6 +57,8 @@ public class ReflectionProbe1 : UdonSharpBehaviour
                 playerLocal.GetPosition().z
             );
         }
+
+#if UNITY_STANDALONE
         intervalCounter--;
 
         if (intervalCounter == 0)
@@ -60,5 +66,16 @@ public class ReflectionProbe1 : UdonSharpBehaviour
             probeComponent.RenderProbe();
             intervalCounter = renderInterval;
         }
+#elif UNITY_EDITOR
+        intervalCounter--;
+
+        if (intervalCounter == 0)
+        {
+            probeComponent.RenderProbe();
+            intervalCounter = renderInterval;
+        }
+#else
+        // Do nothing, Quest / Android does not support realtime reflection probes
+#endif
     }
 }
