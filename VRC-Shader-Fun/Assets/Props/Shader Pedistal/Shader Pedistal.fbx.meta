@@ -3,7 +3,27 @@ guid: 0e4e65c947f346a40945a28b9eebd7ee
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brass
+    second: {fileID: 2100000, guid: 83c456bd6a4e38e4bb1854336f28edb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 2ae0c3e3de2a9d14995714ec4587bed8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedistal
+    second: {fileID: 2100000, guid: 07dfcd573ff2477498ecc379c0ac1495, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shader
+    second: {fileID: 2100000, guid: 2e03e71e966f213429cecebacf69e0bf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

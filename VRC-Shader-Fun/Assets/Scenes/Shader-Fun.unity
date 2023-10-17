@@ -364,13 +364,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120366244}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.8770401, y: -0.108449414, z: 0.23500217, w: 0.4047388}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 130.455, y: -30, z: 0}
 --- !u!1 &172376748
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +507,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1301792674}
     m_Modifications:
+    - target: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -591,6 +601,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shader Pedistal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: Liquid Shader Graph Experiment
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
@@ -1641,6 +1666,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -1726,6 +1756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liquid Container Shader Pedistal
       objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: Just a reflective sphere
+      objectReference: {fileID: 0}
     - target: {fileID: 5785637227233167610, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_IsActive
@@ -1796,6 +1831,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_RootOrder
@@ -1851,6 +1891,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: Grass Shader Experiment
+      objectReference: {fileID: 0}
     - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_IsActive
@@ -1884,6 +1929,11 @@ PrefabInstance:
     - target: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080766689194397566, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2353953781573117080, guid: 1328307701bc8d64097e13e11cbf2422,
@@ -1965,6 +2015,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shader Pedistal Holy Macaroni
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: 'Holy Macaroni
+
+
+        My first Raymarching Experiment'
       objectReference: {fileID: 0}
     - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
