@@ -13,6 +13,9 @@ Shader "Unlit/HolyMacaroni" {
 	}
 
 	SubShader {
+		Cull Off
+		Zwrite On
+
 		Tags { "RenderType" = "Opaque" }
 		LOD 100
 
