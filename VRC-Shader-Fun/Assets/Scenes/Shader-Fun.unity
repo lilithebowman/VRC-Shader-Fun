@@ -668,20 +668,21 @@ MonoBehaviour:
   useAssignedLayers: 0
   DynamicPrefabs: []
   DynamicMaterials:
-  - {fileID: 2100000, guid: eaa9b109ae8e7e141bff6e7187ab9ee4, type: 2}
   - {fileID: 2100000, guid: 83c456bd6a4e38e4bb1854336f28edb3, type: 2}
   - {fileID: 2100000, guid: 181c4cb281aa2d1488ccd68e7bfa4b9b, type: 2}
   - {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
-  - {fileID: 2100000, guid: b3cd75ae99e4c7c41b1a753a43bad576, type: 2}
-  - {fileID: 2100000, guid: fdd43f4ad3459b94abcaaa2cb34e73af, type: 2}
+  - {fileID: 2100000, guid: 9d57012a629f899458fe636e53863350, type: 2}
+  - {fileID: 2100000, guid: d6930a072d768af498b6aa75800d376c, type: 2}
+  - {fileID: 2100000, guid: 1e9411062698ebb4cbca6451a45a0d21, type: 2}
   - {fileID: 2100000, guid: 04d6fad194ea8b542b67e337d080e740, type: 2}
   - {fileID: 2100000, guid: a4394db6eef991449a460ad7ce3d879e, type: 2}
-  - {fileID: 2100000, guid: d6930a072d768af498b6aa75800d376c, type: 2}
   - {fileID: 2100000, guid: 107adb3f720230f41b8050df2a27fa7f, type: 2}
   - {fileID: 2100000, guid: 91dbde241bc9ccc41b6dedd4ea3fd85c, type: 2}
-  - {fileID: 2100000, guid: 1e9411062698ebb4cbca6451a45a0d21, type: 2}
+  - {fileID: 2100000, guid: fdd43f4ad3459b94abcaaa2cb34e73af, type: 2}
   - {fileID: 2100000, guid: c64c5fc838c698c4784593410903c485, type: 2}
-  - {fileID: 2100000, guid: 9d57012a629f899458fe636e53863350, type: 2}
+  - {fileID: 2100000, guid: 8ea42edb0f513ce4d9140752a442bd4b, type: 2}
+  - {fileID: 2100000, guid: b3cd75ae99e4c7c41b1a753a43bad576, type: 2}
+  - {fileID: 2100000, guid: eaa9b109ae8e7e141bff6e7187ab9ee4, type: 2}
   LightMapsNear: []
   LightMapsFar: []
   LightMode: 0
@@ -769,6 +770,14 @@ MonoBehaviour:
     ID: 30
   - gameObject: {fileID: 1002242750}
     ID: 31
+  - gameObject: {fileID: 1823616185}
+    ID: 32
+  - gameObject: {fileID: 724476318}
+    ID: 33
+  - gameObject: {fileID: 499886088}
+    ID: 34
+  - gameObject: {fileID: 827984545}
+    ID: 35
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!4 &484174633
@@ -1023,6 +1032,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &499886088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5254379194981337918, guid: 1328307701bc8d64097e13e11cbf2422,
+    type: 3}
+  m_PrefabInstance: {fileID: 478402727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &649207833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1257,6 +1272,12 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &724476318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5254379194981337918, guid: 1328307701bc8d64097e13e11cbf2422,
+    type: 3}
+  m_PrefabInstance: {fileID: 2474875987862292539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &751883306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1374,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751883306}
   m_Mesh: {fileID: -8218595885791969753, guid: 0e4e65c947f346a40945a28b9eebd7ee, type: 3}
+--- !u!1 &827984545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5254379194981337918, guid: 1328307701bc8d64097e13e11cbf2422,
+    type: 3}
+  m_PrefabInstance: {fileID: 2050731879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897873546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
@@ -1973,6 +2000,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 875602290299212594}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1823616185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5254379194981337918, guid: 1328307701bc8d64097e13e11cbf2422,
+    type: 3}
+  m_PrefabInstance: {fileID: 875602290299212594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1910994648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 33366917917254458, guid: 1328307701bc8d64097e13e11cbf2422,
@@ -2244,6 +2277,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: Just a reflective sphere
+      objectReference: {fileID: 0}
     - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2345,6 +2383,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: acerola's grass shader with some modifications to allow for density
+        adjustment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254379194981337856, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254379194981337856, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254379194981337918, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975125357091701572, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
       propertyPath: m_Name
@@ -2395,6 +2459,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302881420905306442, guid: 1328307701bc8d64097e13e11cbf2422,
+        type: 3}
+      propertyPath: m_text
+      value: 'Holy Macaroni!
+
+        My first raymarching shader experiment'
       objectReference: {fileID: 0}
     - target: {fileID: 8135999697581786829, guid: 1328307701bc8d64097e13e11cbf2422,
         type: 3}
