@@ -16,6 +16,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VRC.SDKBase;
+using VRC.SDKBase.Editor;
 using VRC.Udon;
 using VRC.Udon.Editor;
 using Object = UnityEngine.Object;
@@ -38,6 +39,7 @@ namespace UdonSharpEditor
             EditorApplication.playModeStateChanged += OnChangePlayMode;
             AssemblyReloadEvents.beforeAssemblyReload += RunPreAssemblyBuildRefresh;
             AssemblyReloadEvents.afterAssemblyReload += RunPostAssemblyBuildRefresh;
+            VRC_SdkBuilder.RegisterContentPreUploadCallback(OnContentPreUpload);
         }
 
         private static bool _skipSceneOpen;
@@ -56,6 +58,11 @@ namespace UdonSharpEditor
 
         [PostProcessScene]
         private static void OnSceneBuild()
+        {
+            OnSceneBuildInternal(BuildPipeline.isBuildingPlayer);
+        }
+        
+        private static void OnSceneBuildInternal(bool isBuildingPlayer)
         {
             Scene currentScene = SceneManager.GetActiveScene();
 
@@ -85,10 +92,10 @@ namespace UdonSharpEditor
                 }
             }
             
-            PrepareUdonSharpBehavioursForPlay(allBehaviours, BuildPipeline.isBuildingPlayer);
+            PrepareUdonSharpBehavioursForPlay(allBehaviours, isBuildingPlayer);
             
             // We only nuke the components when building the actual level for game since we need the components for UI in play mode.
-            if (!BuildPipeline.isBuildingPlayer)
+            if (!isBuildingPlayer)
                 return;
 
             foreach (GameObject rootObject in rootObjects)
@@ -122,6 +129,11 @@ namespace UdonSharpEditor
             
             if (!RunAllUpgrades())
                 UdonSharpProgramAsset.CompileAllCsPrograms();
+        }
+        
+        private static void OnContentPreUpload(object sender, object e)
+        { 
+            OnSceneBuildInternal(true);
         }
 
         private const string HARMONY_ID = "UdonSharp.Editor.EventPatch";

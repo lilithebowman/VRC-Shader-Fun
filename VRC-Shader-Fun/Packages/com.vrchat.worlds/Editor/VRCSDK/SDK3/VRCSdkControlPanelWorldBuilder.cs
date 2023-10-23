@@ -37,9 +37,9 @@ namespace VRC.SDK3.Editor
 {
     public class VRCSdkControlPanelWorldBuilder : IVRCSdkWorldBuilderApi
     {
-        private static Type _postProcessVolumeType;
-        private VRCSdkControlPanel _builder;
-        private VRC_SceneDescriptor[] _scenes;
+        private static Type _postProcessVolumeType; 
+        protected VRCSdkControlPanel _builder;
+        protected VRC_SceneDescriptor[] _scenes;
 
 #if UNITY_ANDROID || UNITY_IOS
         private readonly List<GameObject> _rootGameObjectsBuffer = new List<GameObject>();
@@ -68,6 +68,11 @@ namespace VRC.SDK3.Editor
 
         public virtual bool IsValidBuilder(out string message)
         {
+            if (UnityEditor.EditorPrefs.GetBool("VRC.SDK3.EnableV3", false))
+            {
+                message = "Multiple pipelines are present. V3 pipeline will take priority";
+                return false;
+            }
             FindScenes();
             message = null;
             _pipelineManagers = Tools.FindSceneObjectsOfTypeAll<PipelineManager>();
@@ -81,7 +86,7 @@ namespace VRC.SDK3.Editor
             return false;
         }
 
-        private void FindScenes()
+        protected void FindScenes()
         {
             VRC_SceneDescriptor[] newScenes = Tools.FindSceneObjectsOfTypeAll<VRC_SceneDescriptor>();
 
@@ -785,7 +790,7 @@ namespace VRC.SDK3.Editor
         private Checklist _creationChecklist;
         private Toggle _worldDebuggingToggle;
         private ContentWarningsField _contentWarningsField;
-        private VisualElement _v3Block;
+        protected VisualElement _v3Block;
         private VisualElement _platformSwitcher;
         private VisualElement _publishBlock;
         private Button _publishButton;
@@ -794,7 +799,7 @@ namespace VRC.SDK3.Editor
         private Toggle _acceptTermsToggle;
         private Dictionary<string, Foldout> _foldouts = new Dictionary<string, Foldout>();
         
-        private PipelineManager[] _pipelineManagers;
+        protected PipelineManager[] _pipelineManagers;
         private string _lastBlueprintId;
 
         private string _newThumbnailImagePath;
@@ -1864,36 +1869,8 @@ namespace VRC.SDK3.Editor
                     OnSdkUploadFinish -= UploadFinish;
                 }
             };
-            
-            _v3Block.Add(new IMGUIContainer(() =>
-            {
-                V3SdkUI.DrawV3UI(
-                    () => _builder.NoGuiErrorsOrIssues(),
-                    () =>
-                    {
-                        bool uploadBlocked = !VRCBuildPipelineCallbacks.OnVRCSDKBuildRequested(VRCSDKRequestedBuildType.Scene);
-                        if (!uploadBlocked)
-                        {
-                            if (Core.APIUser.CurrentUser.canPublishWorlds)
-                            {
-                                EnvConfig.ConfigurePlayerSettings();
-                                EditorPrefs.SetBool("VRC.SDKBase_StripAllShaders", false);
-                        
-                                VRC_SdkBuilder.shouldBuildUnityPackage = false;
-                                VRC_SdkBuilder.PreBuildBehaviourPackaging();
-                                VRC_SdkBuilder.ExportSceneToV3();
-                            }
-                            else
-                            {
-                                VRCSdkControlPanel.ShowContentPublishPermissionsDialog();
-                            }
-                        }
-                    }, 
-                    VRCSdkControlPanel.boxGuiStyle, 
-                    VRCSdkControlPanel.infoGuiStyle, 
-                    VRCSdkControlPanel.SdkWindowWidth - 16
-                );
-            }));
+
+            SetupExtraPanelUI();
 
             root.schedule.Execute(() =>
             {
@@ -1940,7 +1917,12 @@ namespace VRC.SDK3.Editor
                 _uploadLastBuildButton.tooltip = lastBuildUrl != null ? "" : "No last build found";
             }).Every(1000);
         }
-        
+
+        public virtual void SetupExtraPanelUI()
+        {
+            
+        }
+
         private async Task<string> Build(bool runAfterBuild)
         {
             var buildBlocked = !VRCBuildPipelineCallbacks.OnVRCSDKBuildRequested(VRCSDKRequestedBuildType.Scene);

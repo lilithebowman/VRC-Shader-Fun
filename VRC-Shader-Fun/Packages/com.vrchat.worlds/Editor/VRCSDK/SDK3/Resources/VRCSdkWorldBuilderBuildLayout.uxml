@@ -43,6 +43,6 @@
                 <Label name="build-and-upload-disabled-text" text="You must fix the issues listed above before you can Upload a Build" class="white-space-normal" />
             </VisualElement>
         </VisualElement>
-        <VisualElement name="v3-block" />
     </VisualElement>
+    <VisualElement class="mt-2 mb-1 col mr-auto" name="v3-block" />
 </UXML>
