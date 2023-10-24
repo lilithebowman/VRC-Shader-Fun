@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Density: 3
+    - _Density: 4.47
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _FogDensity: 0
@@ -66,7 +66,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Height: 3
+    - _Height: 1.37
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
@@ -75,7 +75,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.068
+    - _Width: 0.086
     - _ZWrite: 0
     m_Colors:
     - _AOColor: {r: 0.6132076, g: 0.5668806, b: 0.2285066, a: 1}

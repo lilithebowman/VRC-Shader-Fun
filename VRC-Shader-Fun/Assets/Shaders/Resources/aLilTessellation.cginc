@@ -1,9 +1,19 @@
 #if !defined(TESSELLATION_INCLUDED)
 #define TESSELLATION_INCLUDED
 
-// Define the Tesselation Control Point struct
-struct TessellationControlPoint {
+// Define the struct for vertex data
+struct VertexData {
 	float4 vertex : POSITION;
+	float3 normal : NORMAL;
+	float4 tangent : TANGENT;
+	float2 uv : TEXCOORD0;
+	float2 uv1 : TEXCOORD1;
+	float2 uv2 : TEXCOORD2;
+};
+
+// Define the Tesselation Control Point struct
+struct ControlPoint {
+	float4 vertex : INTERNALTESSPOS;
 	float3 normal : NORMAL;
 	float4 tangent : TANGENT;
 	float2 uv : TEXCOORD0;
@@ -22,8 +32,8 @@ struct TessellationFactors {
 [UNITY_outputtopology("triangle_cw")] // vertices are defined clockwise (Unity default)
 [UNITY_partitioning("integer")] // cut up the patch into integers
 [UNITY_patchconstantfunc("PatchConstantFunction")] // run this function once per patch
-TessellationControlPoint HullProgram(
-	InputPatch<TessellationControlPoint, 3> patch,
+ControlPoint HullProgram(
+	InputPatch<ControlPoint, 3> patch,
 	uint id : SV_OutputControlPointID
 ) {
 	return patch[id];
@@ -31,17 +41,17 @@ TessellationControlPoint HullProgram(
 
 
 // takes a patch as an input parameter and outputs the tessellation factors
-TessellationFactors PatchConstantFunction(InputPatch<TessellationControlPoint, 3> patch) {
+TessellationFactors PatchConstantFunction(InputPatch<ControlPoint, 3> patch) {
 	TessellationFactors f;
-	f.edge[0] = 1;
-	f.edge[1] = 1;
-	f.edge[2] = 1;
-	f.inside = 1;
+	f.edge[0] = 1 * _Density;
+	f.edge[1] = 1 * _Density;
+	f.edge[2] = 1 * _Density;
+	f.inside = 1 * _Density;
 	return f;
 }
 
-TessellationControlPoint TesellatedVertexProgram(TessellationControlPoint v) {
-	TessellationControlPoint p;
+ControlPoint TesellatedVertexProgram(VertexData v) {
+	ControlPoint p;
 	p.vertex = v.vertex;
 	p.normal = v.normal;
 	p.tangent = v.tangent;
@@ -52,12 +62,12 @@ TessellationControlPoint TesellatedVertexProgram(TessellationControlPoint v) {
 }
 
 [UNITY_domain("tri")]
-TessellationControlPoint DomainProgram (
+ControlPoint DomainProgram (
 	TessellationFactors factors,
-	OutputPatch<TessellationControlPoint, 3> patch,
+	OutputPatch<ControlPoint, 3> patch,
 	float3 barycentricCoordinates : SV_DomainLocation
 ) {
-	TessellationControlPoint data;
+	ControlPoint data;
 
 	// define a macro to interpolate values
 	#define MY_DOMAIN_PROGRAM_INTERPOLATE(fieldName) data.fieldName = \

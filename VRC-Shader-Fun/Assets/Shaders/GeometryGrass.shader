@@ -27,13 +27,17 @@
 #ifdef UNITY_CAN_COMPILE_TESSELLATION
 			#pragma require geometry
 			#pragma require tessellation
+			#pragma vertex TesellatedVertexProgram
 			#pragma fragment fp
 			#pragma geometry gp
-			#pragma vertex TesellatedVertexProgram
 			#pragma hull HullProgram
 			#pragma domain DomainProgram
 
 			#pragma target 4.6
+
+			float4 _Albedo1, _Albedo2, _AOColor, _TipColor, _FogColor;
+			float _FogDensity, _FogOffset;
+			float _Height, _Width, _Density;
 
 			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
@@ -41,11 +45,6 @@
 			#include "./Resources/Random.cginc"
 			#include "./Resources/Simplex.compute"
 			#include "./Resources/aLilTessellation.cginc"
-
-			struct VertexData {
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-			};
 
 			struct v2g {
 				float4 vertex : SV_POSITION;
@@ -56,10 +55,6 @@
 				float2 uv : TEXCOORD0;
 				float4 worldPos : TEXCOORD1;
 			};
-
-			float4 _Albedo1, _Albedo2, _AOColor, _TipColor, _FogColor;
-			float _FogDensity, _FogOffset;
-			float _Height, _Width, _Density;
 
 			v2g vp(VertexData v) {
 				v2g o;
