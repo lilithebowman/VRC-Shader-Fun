@@ -1,6 +1,22 @@
 #if !defined(TESSELLATION_INCLUDED)
 #define TESSELLATION_INCLUDED
 
+// Define the Tesselation Control Point struct
+struct TessellationControlPoint {
+	float4 vertex : POSITION;
+	float3 normal : NORMAL;
+	float4 tangent : TANGENT;
+	float2 uv : TEXCOORD0;
+	float2 uv1 : TEXCOORD1;
+	float2 uv2 : TEXCOORD2;
+};
+
+// Define the tesselation factors as a struct
+struct TessellationFactors {
+	float edge[3] : SV_TessFactor;
+	float inside : SV_InsideTessFactor;
+};
+
 [UNITY_domain("tri")] // we are working with triangles here
 [UNITY_outputcontrolpoints(3)] // each has 3 control points
 [UNITY_outputtopology("triangle_cw")] // vertices are defined clockwise (Unity default)
@@ -13,11 +29,6 @@ TessellationControlPoint HullProgram(
 	return patch[id];
 }
 
-// Define the tesselation factors as a struct
-struct TessellationFactors {
-	float edge[3] : SV_TessFactor;
-	float inside : SV_InsideTessFactor;
-};
 
 // takes a patch as an input parameter and outputs the tessellation factors
 TessellationFactors PatchConstantFunction(InputPatch<TessellationControlPoint, 3> patch) {

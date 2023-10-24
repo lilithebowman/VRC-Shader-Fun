@@ -32,21 +32,15 @@
 			#pragma vertex TesellatedVertexProgram
 			#pragma hull HullProgram
 			#pragma domain DomainProgram
-				
-			struct TessellationControlPoint {
-				float4 vertex : INTERNALTESSPOS;
-				float3 normal : NORMAL;
-				float4 tangent : TANGENT;
-				float2 uv : TEXCOORD0;
-				float2 uv1 : TEXCOORD1;
-				float2 uv2 : TEXCOORD2;
-			};
 
 			#pragma target 4.6
 
 			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
 			#include "UnityCG.cginc"
+			#include "./Resources/Random.cginc"
+			#include "./Resources/Simplex.compute"
+			#include "./Resources/aLilTessellation.cginc"
 
 			struct VertexData {
 				float4 vertex : POSITION;
@@ -62,9 +56,6 @@
 				float2 uv : TEXCOORD0;
 				float4 worldPos : TEXCOORD1;
 			};
-			#include "./Resources/Random.cginc"
-			#include "./Resources/Simplex.compute"
-			#include "./Resources/aLilTessellation.cginc"
 
 			float4 _Albedo1, _Albedo2, _AOColor, _TipColor, _FogColor;
 			float _FogDensity, _FogOffset;
