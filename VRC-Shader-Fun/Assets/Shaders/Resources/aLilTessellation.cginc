@@ -6,8 +6,8 @@
 [UNITY_outputtopology("triangle_cw")] // vertices are defined clockwise (Unity default)
 [UNITY_partitioning("integer")] // cut up the patch into integers
 [UNITY_patchconstantfunc("PatchConstantFunction")] // run this function once per patch
-VertexData HullProgram(
-	InputPatch<VertexData, 3> patch,
+TessellationControlPoint HullProgram(
+	InputPatch<TessellationControlPoint, 3> patch,
 	uint id : SV_OutputControlPointID
 ) {
 	return patch[id];
@@ -20,7 +20,7 @@ struct TessellationFactors {
 };
 
 // takes a patch as an input parameter and outputs the tessellation factors
-TessellationFactors PatchConstantFunction(InputPatch<VertexData, 3> patch) {
+TessellationFactors PatchConstantFunction(InputPatch<TessellationControlPoint, 3> patch) {
 	TessellationFactors f;
 	f.edge[0] = 1;
 	f.edge[1] = 1;
@@ -29,13 +29,39 @@ TessellationFactors PatchConstantFunction(InputPatch<VertexData, 3> patch) {
 	return f;
 }
 
+TessellationControlPoint TesellatedVertexProgram(TessellationControlPoint v) {
+	TessellationControlPoint p;
+	p.vertex = v.vertex;
+	p.normal = v.normal;
+	p.tangent = v.tangent;
+	p.uv = v.uv;
+	p.uv1 = v.uv1;
+	p.uv2 = v.uv2;
+	return p;
+}
+
 [UNITY_domain("tri")]
-void DomainProgram (
+TessellationControlPoint DomainProgram (
 	TessellationFactors factors,
-	OutputPatch<VertexData, 3> patch,
+	OutputPatch<TessellationControlPoint, 3> patch,
 	float3 barycentricCoordinates : SV_DomainLocation
 ) {
-	VertexData data;
+	TessellationControlPoint data;
+
+	// define a macro to interpolate values
+	#define MY_DOMAIN_PROGRAM_INTERPOLATE(fieldName) data.fieldName = \
+		patch[0].fieldName * barycentricCoordinates.x + \
+		patch[1].fieldName * barycentricCoordinates.y + \
+		patch[2].fieldName * barycentricCoordinates.z;
+
+	MY_DOMAIN_PROGRAM_INTERPOLATE(vertex)  // interpolate the vertex
+	MY_DOMAIN_PROGRAM_INTERPOLATE(normal)  // interpolate the normal
+	MY_DOMAIN_PROGRAM_INTERPOLATE(tangent) // interpolate the tangent
+	MY_DOMAIN_PROGRAM_INTERPOLATE(uv)      // interpolate the first uv
+	MY_DOMAIN_PROGRAM_INTERPOLATE(uv1)     // interpolate the second uv
+	MY_DOMAIN_PROGRAM_INTERPOLATE(uv2)     // interpolate the third uv
+
+	return TesellatedVertexProgram(data);
 }
 
 #endif
