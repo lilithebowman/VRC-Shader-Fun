@@ -6,7 +6,7 @@
         _TipColour("Tip Colour", Color) = (1, 1, 1)
         _Height("Grass Height", float) = 3
         _Width("Grass Width", range(0, 1)) = 0.05
-        _Density("Grass Density", range(1, 10)) = 1
+        _Density("Grass Density", range(1, 10)) = 3
         _FogColor("Fog Color", Color) = (1, 1, 1)
         _FogDensity("Fog Density", Range(0.0, 1.0)) = 0.0
         _FogOffset("Fog Offset", Range(0.0, 10.0)) = 0.0
@@ -29,12 +29,15 @@
                 #pragma fragment fp
                 #pragma geometry gp
 
-                #pragma target 4.5
+                #pragma target 4.6
 
                 #include "UnityPBSLighting.cginc"
                 #include "AutoLight.cginc"
                 #include "./Resources/Random.cginc"
                 #include "./Resources/Simplex.compute"
+				#include "./Resources/aLilTessellation.cginc"
+
+				#pragma hull HullProgram
 
                 struct VertexData {
                     float4 vertex : POSITION;
@@ -58,7 +61,7 @@
                 v2g vp(VertexData v) {
                     v2g o;
 
-                    o.vertex = v.vertex / _Density;
+                    o.vertex = v.vertex;
 
                     return o;
                 }
@@ -98,7 +101,7 @@
                         float widthMod = 1.0f - float(i) / float(vertexCount);
                         widthMod = pow(widthMod * widthMod, 1.0f / 3.0f);
 
-                        if (i % 2 == 0) {
+                        if (i % 2 <= 0) {
                             v[i].vertex = float4(root.x - (_Width * widthMod), root.y + currentVertexHeight, root.z, 1);
                             v[i].uv = float2(0, currentV);
                         }
