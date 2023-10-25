@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Grass
+  m_Name: TessellatedGeometryGrass
   m_Shader: {fileID: 4800000, guid: 6a0f210ad8551784bb5dc52af08f698f, type: 3}
   m_ShaderKeywords: _BAKERY_NONE _LIGHTMAPSPECULAR
   m_LightmapFlags: 4
