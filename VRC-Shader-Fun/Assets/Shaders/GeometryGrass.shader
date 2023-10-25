@@ -25,7 +25,7 @@
 			CGPROGRAM
 
 			#pragma require geometry
-			#pragma vertex TesellatedVertexProgram
+			#pragma vertex vp
 			#pragma fragment fp
 			#pragma geometry gp
 
@@ -45,15 +45,6 @@
 			#include "./Resources/Random.cginc"
 			#include "./Resources/Simplex.compute"
 			#include "./Resources/aLilTessellation.cginc"
-
-			struct v2g {
-				float4 vertex : SV_POSITION;
-				float3 normal : NORMAL;
-				float4 tangent : TANGENT;
-				float2 uv : TEXCOORD0;
-				float2 uv1 : TEXCOORD1;
-				float2 uv2 : TEXCOORD2;
-			};
 
 			struct g2f {
 				float4 vertex : SV_POSITION;

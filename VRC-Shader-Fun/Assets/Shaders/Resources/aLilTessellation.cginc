@@ -55,9 +55,20 @@
 		return f;
 	}
 
+	struct v2g {
+		float4 vertex : SV_POSITION;
+	};
+	v2g vp(VertexData v) {
+		v2g o;
+
+		o.vertex = v.vertex;
+
+		return o;
+	}
+
 	ControlPoint TesellatedVertexProgram(VertexData v) {
 #ifndef UNITY_CAN_COMPILE_TESSELLATION
-		return v;
+		return v2g(v);
 #endif
 		ControlPoint p;
 		p.vertex = v.vertex;
