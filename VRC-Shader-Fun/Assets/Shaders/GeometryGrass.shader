@@ -24,12 +24,12 @@
 		Pass {
 			CGPROGRAM
 
-#ifdef UNITY_CAN_COMPILE_TESSELLATION
 			#pragma require geometry
-			#pragma require tessellation
 			#pragma vertex TesellatedVertexProgram
 			#pragma fragment fp
 			#pragma geometry gp
+
+			#pragma require tessellation
 			#pragma hull HullProgram
 			#pragma domain DomainProgram
 
@@ -48,6 +48,11 @@
 
 			struct v2g {
 				float4 vertex : SV_POSITION;
+				float3 normal : NORMAL;
+				float4 tangent : TANGENT;
+				float2 uv : TEXCOORD0;
+				float2 uv1 : TEXCOORD1;
+				float2 uv2 : TEXCOORD2;
 			};
 
 			struct g2f {
@@ -55,14 +60,6 @@
 				float2 uv : TEXCOORD0;
 				float4 worldPos : TEXCOORD1;
 			};
-
-			v2g vp(VertexData v) {
-				v2g o;
-
-				o.vertex = v.vertex;
-
-				return o;
-			}
 
 			float4 RotateAroundYInDegrees(float4 vertex, float degrees) {
 				float alpha = degrees * UNITY_PI / 180.0;
@@ -146,10 +143,9 @@
 				return lerp(_FogColor, grassColor, fogFactor);
 			}
 
-#endif
 			ENDCG
 		}
 
     }
-        FallBack "Unlit"
+    FallBack "Unlit"
 }
