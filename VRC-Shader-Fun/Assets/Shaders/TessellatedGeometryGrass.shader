@@ -24,12 +24,12 @@
 		Pass {
 			CGPROGRAM
 
+#ifdef UNITY_CAN_COMPILE_TESSELLATION
 			#pragma require geometry
-			#pragma vertex vp
+			#pragma require tessellation
+			#pragma vertex TesellatedVertexProgram
 			#pragma fragment fp
 			#pragma geometry gp
-
-			#pragma require tessellation
 			#pragma hull HullProgram
 			#pragma domain DomainProgram
 
@@ -46,11 +46,23 @@
 			#include "./Resources/Simplex.compute"
 			#include "./Resources/aLilTessellation.cginc"
 
+			struct v2g {
+				float4 vertex : SV_POSITION;
+			};
+
 			struct g2f {
 				float4 vertex : SV_POSITION;
 				float2 uv : TEXCOORD0;
 				float4 worldPos : TEXCOORD1;
 			};
+
+			v2g vp(VertexData v) {
+				v2g o;
+
+				o.vertex = v.vertex;
+
+				return o;
+			}
 
 			float4 RotateAroundYInDegrees(float4 vertex, float degrees) {
 				float alpha = degrees * UNITY_PI / 180.0;
@@ -134,9 +146,10 @@
 				return lerp(_FogColor, grassColor, fogFactor);
 			}
 
+#endif
 			ENDCG
 		}
 
     }
-    FallBack "Unlit"
+        FallBack "Unlit"
 }

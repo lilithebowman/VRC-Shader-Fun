@@ -13,12 +13,7 @@
 
 	// Define the Tesselation Control Point struct
 	struct ControlPoint {
-#ifdef UNITY_CAN_COMPILE_TESSELLATION
 		float4 vertex : INTERNALTESSPOS;
-#else
-		float4 vertex : POSITION;
-#endif
-
 		float3 normal : NORMAL;
 		float4 tangent : TANGENT;
 		float2 uv : TEXCOORD0;
@@ -55,21 +50,7 @@
 		return f;
 	}
 
-	struct v2g {
-		float4 vertex : SV_POSITION;
-	};
-	v2g vp(VertexData v) {
-		v2g o;
-
-		o.vertex = v.vertex;
-
-		return o;
-	}
-
 	ControlPoint TesellatedVertexProgram(VertexData v) {
-#ifndef UNITY_CAN_COMPILE_TESSELLATION
-		return v2g(v);
-#endif
 		ControlPoint p;
 		p.vertex = v.vertex;
 		p.normal = v.normal;
