@@ -27,17 +27,27 @@
 #ifdef UNITY_CAN_COMPILE_TESSELLATION
 			#pragma require geometry
 			#pragma require tessellation
-			#pragma vertex TesellatedVertexProgram
 			#pragma fragment fp
 			#pragma geometry gp
-			#pragma hull HullProgram
 			#pragma domain DomainProgram
+			#pragma hull HullProgram
+			#pragma vertex TesellatedVertexProgram
 
 			#pragma target 4.6
 
 			float4 _Albedo1, _Albedo2, _AOColor, _TipColor, _FogColor;
 			float _FogDensity, _FogOffset;
 			float _Height, _Width, _Density;
+
+			// Define the struct for vertex data
+			struct VertexData {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 tangent : TANGENT;
+				float2 uv : TEXCOORD0;
+				float2 uv1 : TEXCOORD1;
+				float2 uv2 : TEXCOORD2;
+			};
 
 			#include "UnityPBSLighting.cginc"
 			#include "AutoLight.cginc"
@@ -74,13 +84,13 @@
 
 			[maxvertexcount(30)]
 			void gp(point v2g points[1], inout TriangleStream<g2f> triStream) {
-				int i;
+				uint i;
 				float4 root = points[0].vertex;
 
 				float idHash = randValue(abs(root.x * 10000 + root.y * 100 + root.z * 0.05f + 2));
 				idHash = randValue(idHash * 100000);
 
-				const int vertexCount = 12;
+				const uint vertexCount = 12;
 
 				g2f v[vertexCount];
 
