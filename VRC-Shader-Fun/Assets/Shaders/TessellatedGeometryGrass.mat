@@ -79,16 +79,16 @@ Material:
     - _BumpShadowHeightScale: 0.2
     - _CullMode: 2
     - _Cutoff: 0.5
-    - _Density: 1
+    - _Density: 4.64
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _ExposureOcclusion: 0.2
-    - _FogDensity: 0.5
+    - _FogDensity: 0.069
     - _FogOffset: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 4
+    - _Height: 1.24
     - _LTCGI: 0
     - _LightmapSpecular: 1
     - _LightmapSpecularMaxSmoothness: 1
@@ -101,7 +101,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.1
+    - _Width: 0.136
     - _ZWrite: 1
     - _specularAntiAliasingThreshold: 0.25
     - _specularAntiAliasingVariance: 0.15

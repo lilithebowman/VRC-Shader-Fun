@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GeometryGrass
-  m_Shader: {fileID: 4800000, guid: 3613b0cc7dc211f40aaeaa0a67e4d733, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6a0f210ad8551784bb5dc52af08f698f, type: 3}
   m_ShaderKeywords: _BAKERY_NONE _LIGHTMAPSPECULAR
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -79,7 +79,7 @@ Material:
     - _BumpShadowHeightScale: 0.2
     - _CullMode: 2
     - _Cutoff: 0.5
-    - _Density: 3
+    - _Density: 5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _ExposureOcclusion: 0.2
@@ -88,7 +88,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 8.02
+    - _Height: 2.15
     - _LTCGI: 0
     - _LightmapSpecular: 1
     - _LightmapSpecularMaxSmoothness: 1
@@ -101,7 +101,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.157
+    - _Width: 0.133
     - _ZWrite: 1
     - _specularAntiAliasingThreshold: 0.25
     - _specularAntiAliasingVariance: 0.15
