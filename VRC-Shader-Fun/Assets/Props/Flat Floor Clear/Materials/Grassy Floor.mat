@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GeometryGrass
+  m_Name: Grassy Floor
   m_Shader: {fileID: 4800000, guid: 6a0f210ad8551784bb5dc52af08f698f, type: 3}
-  m_ShaderKeywords: _BAKERY_NONE _LIGHTMAPSPECULAR
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,10 +21,6 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DFG:
-        m_Texture: {fileID: 2800000, guid: b6b1f1fa6be1ce54f8bcd5428c160a28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -59,58 +55,33 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _RNM0:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RNM1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _RNM2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaToMaskMode: 0
-    - _Bakery: 0
     - _BumpScale: 1
-    - _BumpShadowHardness: 50
-    - _BumpShadowHeightScale: 0.2
-    - _CullMode: 2
     - _Cutoff: 0.5
-    - _Density: 3
+    - _Density: 10
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _ExposureOcclusion: 0.2
-    - _FogDensity: 0.5
-    - _FogOffset: 10
+    - _FogDensity: 0
+    - _FogOffset: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 2.15
-    - _LTCGI: 0
-    - _LightmapSpecular: 1
-    - _LightmapSpecularMaxSmoothness: 1
+    - _Height: 0.25
     - _Metallic: 0
     - _Mode: 0
-    - _NormalMapShadows: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.133
+    - _Width: 0.01
     - _ZWrite: 1
-    - _specularAntiAliasingThreshold: 0.25
-    - _specularAntiAliasingVariance: 0.15
     m_Colors:
-    - _AOColor: {r: 0.9056604, g: 0.88899946, b: 0.72196513, a: 1}
-    - _Albedo1: {r: 0.4349858, g: 0.8018868, b: 0.5307691, a: 1}
-    - _Albedo2: {r: 0.7613784, g: 0.8490566, b: 0.30838373, a: 1}
-    - _Color: {r: 0.18195978, g: 0.4433962, b: 0.21189377, a: 1}
+    - _AOColor: {r: 0.07880917, g: 0.21698111, b: 0.12363181, a: 1}
+    - _Albedo1: {r: 0.12482201, g: 0.31132078, b: 0.13085762, a: 1}
+    - _Albedo2: {r: 0.7928543, g: 1, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FogColor: {r: 0.72463506, g: 0.8679245, b: 0.7609587, a: 1}
-    - _TipColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TipColour: {r: 1, g: 1, b: 1, a: 1}
+    - _FogColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TipColour: {r: 0.9072147, g: 0.9150943, b: 0.6949537, a: 1}
