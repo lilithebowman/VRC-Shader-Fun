@@ -79,7 +79,7 @@ Material:
     - _BumpShadowHeightScale: 0.2
     - _CullMode: 2
     - _Cutoff: 0.5
-    - _Density: 4.64
+    - _Density: 10
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _ExposureOcclusion: 0.2

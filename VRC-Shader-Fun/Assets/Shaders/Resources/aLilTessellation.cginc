@@ -37,8 +37,8 @@
 	// takes a patch as an input parameter and outputs the tessellation factors
 	TessellationFactors PatchConstantFunction(InputPatch<ControlPoint, 3> patch) {
 		TessellationFactors f;
-		float dist = distance(_WorldSpaceCameraPos, patch[0].vertex);
-		float density = _Density / abs(dist/20);
+		float dist = distance(_WorldSpaceCameraPos, mul(unity_ObjectToWorld, patch[0].vertex));
+		float density = min(_Density / abs(dist/10), _Density);
 		f.edge[0] = density;
 		f.edge[1] = density;
 		f.edge[2] = density;
