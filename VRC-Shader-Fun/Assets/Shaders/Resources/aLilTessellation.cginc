@@ -1,7 +1,3 @@
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
 #if !defined(TESSELLATION_INCLUDED)
 #define TESSELLATION_INCLUDED
 
@@ -37,8 +33,14 @@
 	// takes a patch as an input parameter and outputs the tessellation factors
 	TessellationFactors PatchConstantFunction(InputPatch<ControlPoint, 3> patch) {
 		TessellationFactors f;
-		float dist = distance(_WorldSpaceCameraPos, mul(unity_ObjectToWorld, patch[0].vertex));
-		float density = min(_Density / abs(dist/10), _Density);
+		float dist = distance(
+			_WorldSpaceCameraPos,
+			mul(unity_ObjectToWorld, patch[0].vertex)
+		) / _Falloff;
+		float densityOffset = _FPS / 60;
+		float density = min(_Density / dist * densityOffset, _Density * densityOffset);
+		float2 uv = patch[0].uv;
+		density = density * (1 - tex2Dlod(_GrassDensityTex, float4(uv, 0, 0)));
 		f.edge[0] = density;
 		f.edge[1] = density;
 		f.edge[2] = density;

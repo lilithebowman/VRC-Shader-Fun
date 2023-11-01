@@ -1,15 +1,19 @@
 ﻿Shader "Lilithe/TessellatedGeometryGrass" {
     Properties{
+		_MainTex ("Soil Texture", 2D) = "white" {}
+		_GrassDensityTex ("Grass Density", 2D) = "white" {}
         _Albedo1("Colour 1", Color) = (1, 1, 1)
         _Albedo2("Colour 2", Color) = (1, 1, 1)
         _AOColor("Ambient Occlusion", Color) = (1, 1, 1)
         _TipColour("Tip Colour", Color) = (1, 1, 1)
         _Height("Grass Height", float) = 3
         _Width("Grass Width", range(0, 1)) = 0.05
-        _Density("Grass Density", range(1, 10)) = 3
+        _Density("Grass Density", range(1, 30)) = 3
+        _Falloff("Grass Falloff", range(1, 30)) = 10
         _FogColor("Fog Color", Color) = (1, 1, 1)
         _FogDensity("Fog Density", Range(0.0, 1.0)) = 0.0
         _FogOffset("Fog Offset", Range(0.0, 10.0)) = 0.0
+		_FPS("Current In Game FPS", Range(0.0, 60)) = 60.0
     }
 
 	SubShader{
@@ -35,9 +39,11 @@
 
 			#pragma target 4.6
 
+			sampler2D _MainTex, _GrassDensityTex;
 			float4 _Albedo1, _Albedo2, _AOColor, _TipColor, _FogColor;
 			float _FogDensity, _FogOffset;
-			float _Height, _Width, _Density;
+			float _Height, _Width, _Density, _Falloff;
+			float _FPS;
 
 			// Define the struct for vertex data
 			struct VertexData {
@@ -139,7 +145,8 @@
 			}
 
 			fixed4 fp(g2f i) : SV_Target {
-				float4 col = lerp(_Albedo1, _Albedo2, i.uv.y);
+				fixed4 col = lerp(_Albedo1, _Albedo2, i.uv.y);
+
 				float3 lightDir = _WorldSpaceLightPos0.xyz;
 				float ndotl = DotClamped(lightDir, normalize(float3(0, 1, 0)));
 
@@ -160,6 +167,40 @@
 			ENDCG
 		}
 
+		Pass {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include "UnityCG.cginc"
+
+            struct appdata {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct v2f {
+                float2 uv : TEXCOORD0;
+                float4 vertex : SV_POSITION;
+            };
+
+            v2f vert (appdata v) {
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = v.uv;
+                return o;
+            }
+
+            sampler2D _MainTex;
+
+            fixed4 frag (v2f i) : SV_Target {
+                fixed4 col = tex2D(_MainTex, i.uv);
+
+                return col;
+            }
+            ENDCG
+        }
+
     }
-        FallBack "Unlit"
+	FallBack "Unlit"
 }

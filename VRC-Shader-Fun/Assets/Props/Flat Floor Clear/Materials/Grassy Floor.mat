@@ -39,8 +39,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _GrassDensityTex:
+        m_Texture: {fileID: 2800000, guid: d178c1e949d040c40b872f98699a71e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7a1bbdcaab999da4a9a4424e47b454d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,15 +62,17 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Density: 3
+    - _Density: 30
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FogDensity: 0
-    - _FogOffset: 0
+    - _FPS: 60
+    - _Falloff: 10
+    - _FogDensity: 0.034
+    - _FogOffset: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 0.15
+    - _Height: 0.26
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -75,13 +81,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.025
+    - _Width: 0.023
     - _ZWrite: 1
     m_Colors:
-    - _AOColor: {r: 0.47327888, g: 0.04765931, b: 0.4811321, a: 1}
-    - _Albedo1: {r: 0.17130785, g: 0.10951406, b: 0.21698111, a: 1}
-    - _Albedo2: {r: 0.99034977, g: 0, b: 1, a: 1}
+    - _AOColor: {r: 0.070004225, g: 0.48235294, b: 0.047058806, a: 0.6117647}
+    - _Albedo1: {r: 0.110825725, g: 0.21568628, b: 0.10980392, a: 0.54509807}
+    - _Albedo2: {r: 0.4453504, g: 1, b: 0, a: 0.57254905}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FogColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TipColour: {r: 1, g: 0, b: 0.8365736, a: 1}
+    - _FogColor: {r: 0.7931998, g: 0.8113208, b: 0.5855287, a: 1}
+    - _SoilColour: {r: 1, g: 1, b: 1, a: 1}
+    - _TipColour: {r: 1, g: 1, b: 1, a: 0.5176471}
