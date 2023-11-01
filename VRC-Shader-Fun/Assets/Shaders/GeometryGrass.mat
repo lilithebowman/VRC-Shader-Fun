@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GrassDensityTex:
-        m_Texture: {fileID: 2800000, guid: 33a18574a1737ab42a75137c3b83c9be, type: 3}
+        m_Texture: {fileID: 2800000, guid: d178c1e949d040c40b872f98699a71e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -107,7 +107,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Width: 0.133
+    - _Width: 0.287
     - _ZWrite: 1
     - _specularAntiAliasingThreshold: 0.25
     - _specularAntiAliasingVariance: 0.15

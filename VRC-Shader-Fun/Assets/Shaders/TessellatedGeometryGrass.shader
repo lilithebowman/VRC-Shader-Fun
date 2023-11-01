@@ -1,7 +1,7 @@
 ﻿Shader "Lilithe/TessellatedGeometryGrass" {
     Properties{
 		_MainTex ("Soil Texture", 2D) = "white" {}
-		_GrassDensityTex ("Grass Density", 2D) = "white" {}
+		[NoScaleOffset] _GrassDensityTex ("Grass Density", 2D) = "white" {}
         _Albedo1("Colour 1", Color) = (1, 1, 1)
         _Albedo2("Colour 2", Color) = (1, 1, 1)
         _AOColor("Ambient Occlusion", Color) = (1, 1, 1)
@@ -192,9 +192,11 @@
             }
 
             sampler2D _MainTex;
+			float4 _MainTex_ST;
 
             fixed4 frag (v2f i) : SV_Target {
-                fixed4 col = tex2D(_MainTex, i.uv);
+				fixed2 newUV = TRANSFORM_TEX(i.uv, _MainTex);
+                fixed4 col = tex2D(_MainTex, newUV);
 
                 return col;
             }
