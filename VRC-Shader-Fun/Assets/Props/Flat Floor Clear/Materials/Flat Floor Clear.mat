@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Flat Floor Clear
-  m_Shader: {fileID: 4800000, guid: 9829e18681954944a8b25de9b080a0b6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 044744ced35f660428c5b5f0477a6e1d, type: 3}
   m_ShaderKeywords: _BAKERY_NONE _LIGHTMAPSPECULAR _NORMALMAP _SPECGLOSSMAP _STEREOENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cf2f44707a76642459b4b2c4847bcf6f, type: 3}
         m_Scale: {x: 400, y: 400}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -82,7 +82,7 @@ Material:
     m_Floats:
     - _AlphaToMaskMode: 0
     - _Bakery: 0
-    - _BumpScale: 0.25
+    - _BumpScale: 1
     - _BumpShadowHardness: 50
     - _BumpShadowHeightScale: 0.2
     - _CullMode: 2
@@ -100,13 +100,13 @@ Material:
     - _LightmapSpecular: 1
     - _LightmapSpecularMaxSmoothness: 1
     - _Metallic: 0.91
-    - _MetallicScale: 0.321
+    - _MetallicScale: 0.474
     - _Mode: 0
     - _NormalMapShadows: 0
-    - _OcclusionScale: 0.487
+    - _OcclusionScale: 0.593
     - _OcclusionStrength: 0.25
     - _Parallax: 0.02
-    - _SmoothnessScale: 0.644
+    - _SmoothnessScale: 0.716
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -119,8 +119,8 @@ Material:
     - _specularAntiAliasingThreshold: 0.25
     - _specularAntiAliasingVariance: 0.15
     m_Colors:
-    - _Color: {r: 0.20660517, g: 0.005339978, b: 0.2264151, a: 1}
+    - _Color: {r: 0.9481132, g: 0.9537418, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UVTransform0: {r: 1, g: 0, b: 0, a: 0}
-    - _UVTransform1: {r: 0, g: 1, b: 0, a: 0}
-    - _UVTransform2: {r: 0, g: 0, b: 1, a: 0}
+    - _UVTransform0: {r: 0.25, g: 0, b: 0, a: 0}
+    - _UVTransform1: {r: 0, g: 0.25, b: 0, a: 0}
+    - _UVTransform2: {r: 0, g: 0, b: 0.25, a: 0}

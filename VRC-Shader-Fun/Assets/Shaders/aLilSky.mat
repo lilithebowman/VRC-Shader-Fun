@@ -29,7 +29,7 @@ Material:
     - StarDensity: 1024
     - _AlphaToMask: 0
     - _BakeryMonoSH: 0
-    - _Cull: 2
+    - _Cull: 0
     - _DstBlend: 0
     - _GlossyReflections: 0
     - _LightmappedSpecular: 0
