@@ -3505,6 +3505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small Grass Lump
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c73069a3eb657c45866bbede5d9d73e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c73069a3eb657c45866bbede5d9d73e, type: 3}
 --- !u!1 &1815323447 stripped
@@ -4662,6 +4667,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 641408684, guid: 21f5f46c02ffa7843a552ae41f3a284f, type: 3}
+      propertyPath: currentFrameRate
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 641408684, guid: 21f5f46c02ffa7843a552ae41f3a284f, type: 3}
       propertyPath: serializationData.Prefab
       value: 

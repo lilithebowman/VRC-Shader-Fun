@@ -37,10 +37,22 @@
 			_WorldSpaceCameraPos,
 			mul(unity_ObjectToWorld, patch[0].vertex)
 		) / _Falloff;
-		float densityOffset = _FPS / 60;
-		float density = min(_Density / dist * densityOffset, _Density * densityOffset);
+
+		// Use the current framerate to modify the density
+		float densityOffset = normalize(_FPS / 60);
+
+		// Set the density equal to the minimum of simply the user's density value
+		// or the density value divided by the distance * the density offset
+		// calculated from the FPS
+		float density = min(_Density / dist * densityOffset, _Density);
 		float2 uv = patch[0].uv;
-		density = density * (1 - tex2Dlod(_GrassDensityTex, float4(uv, 0, 0)));
+
+		// modify the calculated density by the grass density image
+		// which the user can use to select specific parts of a mesh
+		// to place grass on
+		density = density * normalize(tex2Dlod(_GrassDensityTex, float4(uv, 0, 0)));
+
+		// Set the new edges based on the density calculations
 		f.edge[0] = density;
 		f.edge[1] = density;
 		f.edge[2] = density;

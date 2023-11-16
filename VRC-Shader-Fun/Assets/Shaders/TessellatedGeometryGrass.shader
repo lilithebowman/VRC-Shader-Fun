@@ -13,7 +13,7 @@
         _FogColor("Fog Color", Color) = (1, 1, 1)
         _FogDensity("Fog Density", Range(0.0, 1.0)) = 0.0
         _FogOffset("Fog Offset", Range(0.0, 10.0)) = 0.0
-		_FPS("Current In Game FPS", Range(0.0, 60)) = 60.0
+		_FPS("Current In Game FPS", Range(0.0, 60)) = 0.0
     }
 
 	SubShader{
