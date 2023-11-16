@@ -62,12 +62,12 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Density: 19.8
+    - _Density: 10
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableEmission: 0
     - _FPS: 60
-    - _Falloff: 10
+    - _Falloff: 5
     - _FogDensity: 0.034
     - _FogOffset: 10
     - _GlossMapScale: 1
