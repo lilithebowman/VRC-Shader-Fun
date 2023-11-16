@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - BAKERY_META_ALPHA_ENABLE: 1
-    - StarDensity: 10
+    - StarDensity: 1024
     - _AlphaToMask: 0
     - _BakeryMonoSH: 0
     - _Cull: 2
@@ -39,5 +39,5 @@ Material:
     - _SrcBlend: 1
     - _ZWrite: 1
     m_Colors:
-    - HorizonColour: {r: 0.025854412, g: 0.56140965, b: 0.7830189, a: 1}
-    - SkyColour: {r: 0.85617656, g: 0.94758743, b: 0.9811321, a: 1}
+    - HorizonColour: {r: 0.030526884, g: 0.10208446, b: 0.13207549, a: 1}
+    - SkyColour: {r: 0.5309945, g: 0.4274208, b: 0.8018868, a: 1}
