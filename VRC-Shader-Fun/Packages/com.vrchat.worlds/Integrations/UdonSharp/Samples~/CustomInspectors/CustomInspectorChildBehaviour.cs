@@ -33,7 +33,7 @@ namespace UdonSharp.Examples.Inspectors
         private void OnDrawGizmosSelected()
         {
             // RootOnly update will only copy the data for this behaviour from Udon to the proxy
-            this.UpdateProxy(ProxySerializationPolicy.RootOnly);
+            UdonSharpEditorUtility.CopyUdonToProxy(this, ProxySerializationPolicy.RootOnly);
 
             Gizmos.DrawLine(transform.position, transform.position + Vector3.up * sinHeight * 0.6f);
             Gizmos.DrawCube(transform.position, Vector3.one * 0.2f);

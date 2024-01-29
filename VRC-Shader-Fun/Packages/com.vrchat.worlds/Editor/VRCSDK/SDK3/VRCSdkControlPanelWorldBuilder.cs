@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -498,6 +499,33 @@ namespace VRC.SDK3.Editor
                     _builder.OnGUIError(scene, "Object Sync cannot share an object with an object pool",
                         delegate { Selection.activeObject = os.gameObject; }, null);
             }
+            
+            VerifyMaxTextureSize(scene);
+        }
+
+        private void VerifyMaxTextureSize(VRC_SceneDescriptor scene)
+        {
+            var badTextureImporters = VRCSdkControlPanel.GetOversizeTextureImporters(GatherComponentsOfTypeInScene<Renderer>());
+            
+            if (badTextureImporters.Count == 0)
+                return;
+
+            _builder.OnGUIWarning(scene, $"This scene has textures bigger than {VRCSdkControlPanel.MAX_SDK_TEXTURE_SIZE}. Please reduce them to save memory in your world.",
+                null,
+                () =>
+                {
+                    List<string> paths = new List<string>();
+                    foreach (TextureImporter t in badTextureImporters)
+                    {
+                        Undo.RecordObject(t, $"Set Max Texture Size to {VRCSdkControlPanel.MAX_SDK_TEXTURE_SIZE}");
+                        t.maxTextureSize = VRCSdkControlPanel.MAX_SDK_TEXTURE_SIZE;
+                        EditorUtility.SetDirty(t);
+                        paths.Add(t.assetPath);
+                    }
+
+                    AssetDatabase.ForceReserializeAssets(paths);
+                    AssetDatabase.Refresh();
+                });
         }
 
         /// <summary>
@@ -816,7 +844,7 @@ namespace VRC.SDK3.Editor
                 _saveChangesBlock.EnableInClassList("d-none", !isDirty);
                 if (isDirty && !alreadyDirty)
                 {
-                    _saveChangesBlock.experimental.animation.Start(new Vector2(_visualRoot.layout.width, 0), new Vector2(_visualRoot.layout.width, 20), 250, (element, vector2) =>
+                    _saveChangesBlock.experimental.animation.Start(new Vector2(_visualRoot.layout.width, 0), new Vector2(_visualRoot.layout.width, 30), 250, (element, vector2) =>
                     {
                         element.style.height = vector2.y;
                     });
@@ -948,9 +976,9 @@ namespace VRC.SDK3.Editor
             var platformsBlock = root.Q<Label>("content-platform-info");
             _lastUpdatedLabel = root.Q<Label>("last-updated-label");
             _versionLabel = root.Q<Label>("version-label");
-            _saveChangesBlock = root.Q("save-changes-block");
-            _saveChangesButton = root.Q<Button>("save-changes-button");
-            _discardChangesButton = root.Q<Button>("discard-changes-button");
+            _saveChangesBlock = root.panel.visualTree.Q("save-changes-block");
+            _saveChangesButton = _saveChangesBlock.Q<Button>("save-changes-button");
+            _discardChangesButton = _saveChangesBlock.Q<Button>("discard-changes-button");
             _newWorldBlock = root.Q("new-world-block");
             _creationChecklist = root.Q<Checklist>("new-world-checklist");
             _worldDebuggingToggle = root.Q<Toggle>("world-debugging-toggle");
@@ -1126,7 +1154,7 @@ namespace VRC.SDK3.Editor
                 }
                 platformsBlock.text = string.Join(", ", platforms);
 
-                _lastUpdatedLabel.text = _worldData.UpdatedAt != DateTime.MinValue ? _worldData.UpdatedAt.ToString() : _worldData.CreatedAt.ToString();
+                _lastUpdatedLabel.text = (_worldData.UpdatedAt != DateTime.MinValue ? _worldData.UpdatedAt : _worldData.CreatedAt).ToLocalTime().ToString(CultureInfo.CurrentCulture);
                 _lastUpdatedLabel.parent.RemoveFromClassList("d-none");
                 
                 _versionLabel.text = _worldData.Version.ToString();

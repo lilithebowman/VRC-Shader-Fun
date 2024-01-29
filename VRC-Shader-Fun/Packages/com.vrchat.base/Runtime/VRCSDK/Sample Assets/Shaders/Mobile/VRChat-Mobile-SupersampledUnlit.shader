@@ -51,7 +51,7 @@ Shader "VRChat/Mobile/Worlds/Supersampled UI"
         CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            #pragma target 2.0
+            #pragma target 3.0
 
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
@@ -73,6 +73,7 @@ Shader "VRChat/Mobile/Worlds/Supersampled UI"
                 fixed4 color    : COLOR;
                 float2 texcoord  : TEXCOORD0;
                 float4 worldPosition : TEXCOORD1;
+                centroid float2 texcoordCentroid : TEXCOORD2;
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
@@ -90,7 +91,7 @@ Shader "VRChat/Mobile/Worlds/Supersampled UI"
                 OUT.worldPosition = v.vertex;
                 OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
 
-                OUT.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
+                OUT.texcoord = OUT.texcoordCentroid = TRANSFORM_TEX(v.texcoord, _MainTex);
 
                 OUT.color = v.color * _Color;
                 return OUT;
@@ -99,21 +100,28 @@ Shader "VRChat/Mobile/Worlds/Supersampled UI"
             fixed4 frag(v2f IN) : SV_Target
             {
                 // per pixel partial derivatives
-                float2 dx = ddx(i.uv.xy);
-                float2 dy = ddy(i.uv.xy);// rotated grid uv offsets
+                float2 dx = ddx(IN.texcoord.xy);
+                float2 dy = ddy(IN.texcoord.xy);// rotated grid uv offsets
                 float2 uvOffsets = float2(0.125, 0.375);
-                float4 offsetUV = float4(0.0, 0.0, 0.0, -1.0);// supersampled using 2x2 rotated grid
+                float2 offsetUV = float2(0.0, 0.0);// supersampled using 2x2 rotated grid
                 half4 color = 0;
-                offsetUV.xy = i.uv.xy + uvOffsets.x * dx + uvOffsets.y * dy;
-                color += tex2Dbias(_MainTex, offsetUV);
-                offsetUV.xy = i.uv.xy - uvOffsets.x * dx - uvOffsets.y * dy;
-                color += tex2Dbias(_MainTex, offsetUV);
-                offsetUV.xy = i.uv.xy + uvOffsets.y * dx - uvOffsets.x * dy;
-                color += tex2Dbias(_MainTex, offsetUV);
-                offsetUV.xy = i.uv.xy - uvOffsets.y * dx + uvOffsets.x * dy;
-                color += tex2Dbias(_MainTex, offsetUV);
-                color *= 0.25;
 
+                // calculate gradient manually, since we don't want them to come from centroid texcoords
+                float4 grad = float4(ddx(IN.texcoord.xy), ddy(IN.texcoord.xy));
+                const float bias = -1.0f;
+                grad *= pow(2, bias);
+
+                // supersampling
+                offsetUV.xy = IN.texcoordCentroid.xy + uvOffsets.x * dx + uvOffsets.y * dy;
+                color += tex2Dgrad(_MainTex, offsetUV, grad.xy, grad.zw);
+                offsetUV.xy = IN.texcoordCentroid.xy - uvOffsets.x * dx - uvOffsets.y * dy;
+                color += tex2Dgrad(_MainTex, offsetUV, grad.xy, grad.zw);
+                offsetUV.xy = IN.texcoordCentroid.xy + uvOffsets.y * dx - uvOffsets.x * dy;
+                color += tex2Dgrad(_MainTex, offsetUV, grad.xy, grad.zw);
+                offsetUV.xy = IN.texcoordCentroid.xy - uvOffsets.y * dx + uvOffsets.x * dy;
+                color += tex2Dgrad(_MainTex, offsetUV, grad.xy, grad.zw);
+
+                color *= 0.25;
                 color = (color + _TextureSampleAdd) * IN.color;
 
                 #ifdef UNITY_UI_CLIP_RECT

@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.IO;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VRC.SDK3.Platform;
 using VRC.SDK3.Video.Components.AVPro;
 using VRC.SDKBase;
+using VRC.SDKBase.Platform;
 using VRC.Udon;
 
 namespace VRC.SDK3.ClientSim
@@ -252,6 +255,48 @@ namespace VRC.SDK3.ClientSim
             // Initialize SDK links after everything has been created and initialized.
             SetupSDKLinks();
         }
+        
+        #region Platform Management
+
+        private Vector2 CurrentResolution;
+        private VRCOrientation CurrentOrientation;
+        private const int ScreenChangePollRate = 100;
+        
+        private async UniTaskVoid CheckForScreenChange()
+        {
+            while (_isReady)
+            {
+                if ((int)CurrentResolution.x != UnityEngine.Device.Screen.width || (int)CurrentResolution.y != UnityEngine.Device.Screen.height)
+                {
+                    CurrentResolution = new Vector2(UnityEngine.Device.Screen.width, UnityEngine.Device.Screen.height);
+                }
+                
+                var currentOrientation = DetermineOrientation();
+                if (currentOrientation != CurrentOrientation)
+                {
+                    CurrentOrientation = DetermineOrientation();
+                    // send ScreenUpdate event
+                    var screenUpdateEvent = new ClientSimScreenUpdateEvent()
+                    {
+                        data = new ScreenUpdateData()
+                        {
+                            type = ScreenUpdateType.OrientationChanged,
+                            orientation = CurrentOrientation,
+                            resolution = CurrentResolution
+                        }
+                    };
+                    _eventDispatcher.SendEvent(screenUpdateEvent);
+                }
+
+                await UniTask.Delay(ScreenChangePollRate);
+            }
+        }
+        
+        private VRCOrientation DetermineOrientation()
+        {
+            return Screen.width < Screen.height ? VRCOrientation.Portrait : VRCOrientation.Landscape;
+        }
+        #endregion
 
         private void Start()
         {
@@ -307,6 +352,8 @@ namespace VRC.SDK3.ClientSim
             _eventDispatcher.SendEvent(new ClientSimReadyEvent());
             
             stackedCameraSystem.Ready();
+            
+            CheckForScreenChange().Forget();
             
             this.Log("ClientSim Initialized");
         }
