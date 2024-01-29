@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.llealloo.audiolink": {
-      "version": "file:com.llealloo.audiolink",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.nekometer.esnya.udon-sun-controller": {
       "version": "file:com.nekometer.esnya.udon-sun-controller",
       "depth": 0,
