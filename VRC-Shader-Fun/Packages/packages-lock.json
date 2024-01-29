@@ -1,26 +1,5 @@
 {
   "dependencies": {
-    "com.llealloo.audiolink": {
-      "version": "file:com.llealloo.audiolink",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "com.nekometer.esnya.udon-sun-controller": {
-      "version": "file:com.nekometer.esnya.udon-sun-controller",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "com.unity.ai.navigation": {
-      "version": "1.1.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.ai": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.burst": {
       "version": "1.8.7",
       "depth": 1,
@@ -39,13 +18,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.collab-proxy": {
-      "version": "2.0.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.collections": {
       "version": "2.1.4",
       "depth": 1,
@@ -59,32 +31,7 @@
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ide.rider": {
-      "version": "3.0.24",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ext.nunit": "1.0.6"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ide.visualstudio": {
-      "version": "2.0.18",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.9"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ide.vscode": {
-      "version": "1.2.5",
-      "depth": 0,
+      "depth": 3,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -128,32 +75,9 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.render-pipelines.core": {
-      "version": "https://github.com/z3y/ShaderGraph.git?path=/com.unity.render-pipelines.core#2019",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "994a855f664028c6a98a53393c814f87f55c0460"
-    },
-    "com.unity.searcher": {
-      "version": "4.9.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.shadergraph": {
-      "version": "https://github.com/z3y/ShaderGraph.git?path=/com.unity.shadergraph#2019",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.searcher": "4.0.9"
-      },
-      "hash": "994a855f664028c6a98a53393c814f87f55c0460"
-    },
     "com.unity.test-framework": {
       "version": "1.1.33",
-      "depth": 0,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6",
@@ -164,28 +88,16 @@
     },
     "com.unity.textmeshpro": {
       "version": "3.0.6",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.timeline": {
-      "version": "1.7.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.director": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.particlesystem": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.ugui": {
       "version": "1.0.0",
-      "depth": 0,
+      "depth": 2,
       "source": "builtin",
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
@@ -254,13 +166,6 @@
         "com.unity.textmeshpro": "3.0.6",
         "com.unity.inputsystem": "1.2.0"
       }
-    },
-    "com.z3y.shadergraphex": {
-      "version": "https://github.com/z3y/ShaderGraph.git?path=/com.z3y.shadergraphex#2019",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "994a855f664028c6a98a53393c814f87f55c0460"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
