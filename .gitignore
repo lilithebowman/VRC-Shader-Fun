@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/VRC-Shader-Fun/[Ll]ibrary/
+/VRC-Shader-Fun/[Tt]emp/
+/VRC-Shader-Fun/[Oo]bj/
+/VRC-Shader-Fun/[Bb]uild/
+/VRC-Shader-Fun/[Bb]uilds/
+/VRC-Shader-Fun/[Ll]ogs/
+/VRC-Shader-Fun/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
