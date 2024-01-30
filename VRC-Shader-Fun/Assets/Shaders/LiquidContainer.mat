@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,13 +10,18 @@ Material:
   m_Name: LiquidContainer
   m_Shader: {fileID: -6465566751694194690, guid: 33d9b599685522c479aee3efd49039e9,
     type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -28,9 +33,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - BAKERY_META_ALPHA_ENABLE: 1
-    - FillSlider: 0
+    - FillSlider: 0.5
     - _AlphaToMask: 1
     - _BakeryMonoSH: 0
     - _CameraSize: 100
@@ -56,3 +62,4 @@ Material:
     - _OtherPlayersDotColor: {r: 1, g: 1, b: 1, a: 1}
     - _PlayerDotColor: {r: 1, g: 1, b: 1, a: 1}
     - _PlayerPos: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

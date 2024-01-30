@@ -58,14 +58,15 @@ Shader "Unlit/HolyMacaroni" {
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
 				// calculate ray origin and hit position in world space
-				/*
 				o.ro = _WorldSpaceCameraPos;
 				o.hitPos = mul(unity_ObjectToWorld, v.vertex);
-				*/
 
 				// calculate ray origin and hit position in object space
+				/*
 				o.ro = mul(unity_WorldToObject, float4(_WorldSpaceCameraPos, 1));
 				o.hitPos = v.vertex;
+				*/
+
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}

@@ -28,7 +28,6 @@
 		Pass {
 			CGPROGRAM
 
-#ifdef UNITY_CAN_COMPILE_TESSELLATION
 			#pragma require geometry
 			#pragma require tessellation
 			#pragma fragment fp
@@ -163,7 +162,6 @@
 				return lerp(_FogColor, grassColor, fogFactor);
 			}
 
-#endif
 			ENDCG
 		}
 
