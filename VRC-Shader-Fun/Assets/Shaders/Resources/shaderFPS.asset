@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: shaderFPS
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 9ee37f53b3e43024fba6cb1a6449e462,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: d6cebe2ecd57d4543af5919826ca65cf,
     type: 2}
   udonAssembly: 
   assemblyError: 

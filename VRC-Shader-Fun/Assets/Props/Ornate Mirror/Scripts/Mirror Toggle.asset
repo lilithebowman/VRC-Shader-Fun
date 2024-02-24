@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: f9dcc4cdb9a31f64dbabda0c0c14f68b,
     type: 2}
-  udonAssembly: ".data_start\r\n\r\n    .export ObjectToToggle\r\n    \r\n    __instance_0:
-    %UnityEngineGameObject, this\r\n    __value_0: %SystemBoolean, null\r\n    __Boolean_0:
-    %SystemBoolean, null\r\n    __instance_1: %UnityEngineGameObject, this\r\n   
-    ObjectToToggle: %UnityEngineGameObject, this\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
-    .export _interact\r\n    \r\n    _interact:\r\n    \r\n        PUSH, ObjectToToggle\r\n       
-    PUSH, __instance_0\r\n        COPY\r\n        PUSH, ObjectToToggle\r\n       
-    PUSH, __instance_1\r\n        COPY\r\n        PUSH, __instance_1\r\n        PUSH,
-    __Boolean_0\r\n        EXTERN, \"UnityEngineGameObject.__get_activeSelf__SystemBoolean\"\r\n       
-    PUSH, __Boolean_0\r\n        PUSH, __value_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
-    PUSH, __instance_0\r\n        PUSH, __value_0\r\n        EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n       
-    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  udonAssembly: ".data_start\n\n    .export ObjectToToggle\n    \n    __instance_0:
+    %UnityEngineGameObject, this\n    __value_0: %SystemBoolean, null\n    __Boolean_0:
+    %SystemBoolean, null\n    __instance_1: %UnityEngineGameObject, this\n    ObjectToToggle:
+    %UnityEngineGameObject, this\n\n.data_end\n\n.code_start\n\n    .export _interact\n   
+    \n    _interact:\n    \n        PUSH, ObjectToToggle\n        PUSH, __instance_0\n       
+    COPY\n        PUSH, ObjectToToggle\n        PUSH, __instance_1\n        COPY\n       
+    PUSH, __instance_1\n        PUSH, __Boolean_0\n        EXTERN, \"UnityEngineGameObject.__get_activeSelf__SystemBoolean\"\n       
+    PUSH, __Boolean_0\n        PUSH, __value_0\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\n       
+    PUSH, __instance_0\n        PUSH, __value_0\n        EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\n       
+    JUMP, 0xFFFFFFFC\n    \n\n.code_end\n"
   assemblyError: 
   graphData:
     name: 
