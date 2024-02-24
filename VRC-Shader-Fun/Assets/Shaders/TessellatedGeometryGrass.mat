@@ -90,12 +90,12 @@ Material:
     - _BumpShadowHeightScale: 0.2
     - _CullMode: 2
     - _Cutoff: 0.5
-    - _Density: 15
+    - _Density: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _ExposureOcclusion: 0.2
     - _FPS: 60
-    - _Falloff: 5
+    - _Falloff: 30
     - _FogDensity: 0.03
     - _FogOffset: 10
     - _GlossMapScale: 1

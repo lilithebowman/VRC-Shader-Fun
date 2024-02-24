@@ -281,6 +281,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 620699196286011540, guid: 0e4e65c947f346a40945a28b9eebd7ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e4e65c947f346a40945a28b9eebd7ee,
         type: 3}
       propertyPath: m_Name
@@ -590,6 +595,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fdd43f4ad3459b94abcaaa2cb34e73af, type: 2}
+    - target: {fileID: 620699196286011540, guid: 0e4e65c947f346a40945a28b9eebd7ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e4e65c947f346a40945a28b9eebd7ee,
         type: 3}
       propertyPath: m_Name
@@ -1047,6 +1057,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
+    - target: {fileID: 620699196286011540, guid: 0e4e65c947f346a40945a28b9eebd7ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e4e65c947f346a40945a28b9eebd7ee,
         type: 3}
       propertyPath: m_Name
@@ -1943,20 +1958,19 @@ MonoBehaviour:
   useAssignedLayers: 0
   DynamicPrefabs: []
   DynamicMaterials:
-  - {fileID: 2100000, guid: fc2f1069eb32f6b46b6e0bace51a139d, type: 2}
-  - {fileID: 2100000, guid: 60487148accee0e46b64530fa667ed40, type: 2}
-  - {fileID: 2100000, guid: 3cd423cca9a6c47ceb2f768bbbe890da, type: 2}
-  - {fileID: 2100000, guid: d1a4a4eed5b514175b10a10ea1c19add, type: 2}
-  - {fileID: 2100000, guid: e72a6548a39438f49a681fc09a67958f, type: 2}
-  - {fileID: 2100000, guid: 9297a86b54bdea6499d7bb0776c1136a, type: 2}
-  - {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
   - {fileID: 2100000, guid: 83c456bd6a4e38e4bb1854336f28edb3, type: 2}
   - {fileID: 2100000, guid: 07dfcd573ff2477498ecc379c0ac1495, type: 2}
   - {fileID: 2100000, guid: 2ae0c3e3de2a9d14995714ec4587bed8, type: 2}
-  - {fileID: 2100000, guid: 2e03e71e966f213429cecebacf69e0bf, type: 2}
-  - {fileID: 2100000, guid: fdd43f4ad3459b94abcaaa2cb34e73af, type: 2}
-  - {fileID: 2100000, guid: 26fc3c6406a0bf6468211f2697d54e07, type: 2}
   - {fileID: 2100000, guid: 91dbde241bc9ccc41b6dedd4ea3fd85c, type: 2}
+  - {fileID: 2100000, guid: e72a6548a39438f49a681fc09a67958f, type: 2}
+  - {fileID: 2100000, guid: 9297a86b54bdea6499d7bb0776c1136a, type: 2}
+  - {fileID: 2100000, guid: d1a4a4eed5b514175b10a10ea1c19add, type: 2}
+  - {fileID: 2100000, guid: 3cd423cca9a6c47ceb2f768bbbe890da, type: 2}
+  - {fileID: 2100000, guid: fdd43f4ad3459b94abcaaa2cb34e73af, type: 2}
+  - {fileID: 2100000, guid: 60487148accee0e46b64530fa667ed40, type: 2}
+  - {fileID: 2100000, guid: 26fc3c6406a0bf6468211f2697d54e07, type: 2}
+  - {fileID: 2100000, guid: f2ac7562e30b5964d8f4632964fd48ed, type: 2}
+  - {fileID: 2100000, guid: fc2f1069eb32f6b46b6e0bace51a139d, type: 2}
   - {fileID: 2100000, guid: ce2ef40693f65184c89bf947347cbe70, type: 2}
   LightMapsNear: []
   LightMapsFar: []
