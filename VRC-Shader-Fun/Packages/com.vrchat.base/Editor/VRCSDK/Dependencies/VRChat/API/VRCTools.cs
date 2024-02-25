@@ -101,42 +101,59 @@ namespace VRC.SDKBase.Editor.Api
             while (!sendRequest.IsCompleted && !cancellationToken.IsCancellationRequested)
             {
                 await Task.Delay(250, cancellationToken);
-                
-                var servicePoint = ServicePointManager.FindServicePoint(targetUrl);
-                var scheduler = servicePointScheduler?.GetValue(servicePoint);
-                if (scheduler == null)
-                {
-                    continue;
-                }
-                var groups = (IEnumerable)groupsList?.GetValue(servicePointGroups.GetValue(scheduler));
 
-                // we're going to retry finding the active service point
-                if (groups == null)
+                try
                 {
-                    continue;
-                }
-
-                foreach (var group in groups)
-                {
-                    var connections = (IEnumerable) connectionsList?.GetValue(group);
-                    if (connections == null)
+                    var servicePoint = ServicePointManager.FindServicePoint(targetUrl);
+                    var scheduler = servicePointScheduler?.GetValue(servicePoint);
+                    if (scheduler == null)
                     {
                         continue;
                     }
-                    
-                    foreach (var webConnection in connections)
+
+                    // This can be null on mac/linux, so we add an extra check
+                    var servicePointGroup = servicePointGroups?.GetValue(scheduler);
+                    if (servicePointGroup == null)
                     {
-                        if (webConnection == null)
+                        continue;
+                    }
+
+                    var groups = (IEnumerable) groupsList?.GetValue(servicePointGroup);
+
+                    // we're going to retry finding the active service point
+                    if (groups == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (var group in groups)
+                    {
+                        var connections = (IEnumerable) connectionsList?.GetValue(group);
+                        if (connections == null)
                         {
                             continue;
                         }
-                        var socketInstance = (Socket) socket?.GetValue(webConnection);
-                        if (socketInstance != null && socketInstance.Connected && socketInstance.SendBufferSize < 4 * 1024 * 1024)
+
+                        foreach (var webConnection in connections)
                         {
-                            socketInstance.SendBufferSize = 4 * 1024 * 1024;
-                            return;
+                            if (webConnection == null)
+                            {
+                                continue;
+                            }
+
+                            var socketInstance = (Socket) socket?.GetValue(webConnection);
+                            if (socketInstance != null && socketInstance.Connected &&
+                                socketInstance.SendBufferSize < 4 * 1024 * 1024)
+                            {
+                                socketInstance.SendBufferSize = 4 * 1024 * 1024;
+                                return;
+                            }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    Core.Logger.LogWarning($"Failed to increase send buffer {e.Message}", Core.DebugLevel.API);
                 }
             }
         }

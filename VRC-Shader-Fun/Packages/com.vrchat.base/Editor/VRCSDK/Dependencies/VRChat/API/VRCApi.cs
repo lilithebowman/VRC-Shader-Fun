@@ -506,7 +506,8 @@ namespace VRC.SDKBase.Editor.Api {
                 {"assetUrl", newBundleUrl},
                 {"platform", Tools.Platform.ToString()},
                 {"unityVersion", Tools.UnityVersion.ToString()},
-                {"assetVersion", 4}
+                {"assetVersion", 4},
+                {"udonProducts", data.UdonProducts}
             };
             Core.Logger.Log($"Updating with new bundle {newBundleUrl}", DebugLevel.API);
             await VRCApi.Put<object, VRCWorld>($"worlds/{id}", bundleUpdateRequest, cancellationToken: cancellationToken);
@@ -558,7 +559,8 @@ namespace VRC.SDKBase.Editor.Api {
                 {"capacity", data.Capacity},
                 {"recommendedCapacity", data.RecommendedCapacity},
                 {"previewYoutubeId", data.PreviewYoutubeId},
-                {"assetVersion", 4}
+                {"assetVersion", 4},
+                {"udonProducts", data.UdonProducts}
             };
             var createdWorld = await Post<Dictionary<string, object>, VRCWorld>($"worlds", newWorldData, cancellationToken: cancellationToken);
             Core.Logger.Log("Created a new World");

@@ -1,14 +1,16 @@
-﻿#define ENV_SET_INCLUDED_SHADERS
+#define ENV_SET_INCLUDED_SHADERS
 
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using JetBrains.Annotations;
 using UnityEditor.PackageManager.Requests;
+using UnityEditor.SceneManagement;
 using UnityEditor.XR.Management;
 using UnityEditor.XR.Management.Metadata;
 using UnityEngine.Rendering;
@@ -233,6 +235,7 @@ namespace VRC.Editor
 
             SetDLLPlatforms("VRCCore-Standalone", false);
             SetDLLPlatforms("VRCCore-Editor", true);
+            SetSpatializerPluginSettings();
 
             SetDefaultGraphicsAPIs();
             SetGraphicsSettings();
@@ -982,6 +985,58 @@ namespace VRC.Editor
             audioManagerSerializedObject.ApplyModifiedPropertiesWithoutUndo();
             AssetDatabase.SaveAssets();
         }
+        
+        private static void SetSpatializerPluginSettings()
+        {
+            string[] desktopGuids = AssetDatabase.FindAssets("AudioPluginOculusSpatializer");
+
+            var plugins = new List<PluginImporter>();
+            foreach (var guid in desktopGuids)
+            {
+                var importer = AssetImporter.GetAtPath(AssetDatabase.GUIDToAssetPath(guid)) as PluginImporter;
+                if (importer == null)
+                {
+                    continue;
+                }
+
+                if (importer.assetPath.Contains("com.vrchat.base"))
+                {
+                    plugins.Add(importer);
+                }
+            }
+
+            var shouldWarn = false;
+
+            foreach (var plugin in plugins)
+            {
+                var sO = new SerializedObject(plugin);
+                var overrideProp = sO.FindProperty("m_IsOverridable");
+                if (overrideProp.boolValue)
+                {
+                    shouldWarn = true;
+                }
+                overrideProp.boolValue = false;
+                sO.ApplyModifiedProperties();
+                plugin.SaveAndReimport();
+            }
+
+            if (shouldWarn)
+            {
+                if (!EditorUtility.DisplayDialog(
+                        "Spatializer Settings Updated", 
+                        "VRChat SDK detected incorrect Audio Spatializer settings and corrected them." +
+                        "\n\nFor the changes to fully apply - you need to restart your editor",
+                        "Restart Later",
+                        "Save and Restart",
+                        DialogOptOutDecisionType.ForThisMachine,
+                        "VRC.Editor.EnvConfig.ShowSpatializerApplyDialog")
+                   )
+                {
+                    EditorSceneManager.SaveOpenScenes();
+                    EditorApplication.OpenProject(Directory.GetCurrentDirectory());
+                }
+            }
+        }
 
         private static void SetPlayerSettings()
         {
@@ -1010,6 +1065,8 @@ namespace VRC.Editor
             #endif
 
             PlayerSettings.gpuSkinning = true;
+
+            PlayerSettings.legacyClampBlendShapeWeights = true;
 
             PlayerSettings.gcIncremental = true;
 

@@ -7,6 +7,7 @@ using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEditor.SceneManagement;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
@@ -16,6 +17,7 @@ using VRC.Editor;
 using VRC.SDKBase.Validation.Performance;
 using Object = UnityEngine.Object;
 using VRC.SDKBase.Editor;
+using VRC.SDKBase;
 
 /// This file handles the Build tab of the SDK Panel
 /// It finds currently available builder via an attribute and a common interface, checks its validity and displays its UI
@@ -999,6 +1001,25 @@ public partial class VRCSdkControlPanel : EditorWindow
     public static bool HasSubstances(GameObject obj = null)
     {
         return (GetSubstanceObjects(obj, true) != null);
+    }
+
+    public static GameObject GetReferenceCameraObject()
+    {
+        var sceneDescriptor = FindObjectOfType<VRC_SceneDescriptor>();
+        if (sceneDescriptor == null) return null;
+
+        return sceneDescriptor.ReferenceCamera;
+    }
+
+    public static bool ReferenceCameraHasTAAEnabled()
+    {
+        var refCam = GetReferenceCameraObject();
+        if (refCam == null) return false;
+
+        var ppl = refCam.GetComponent<PostProcessLayer>();
+        if (ppl == null) return false;
+
+        return ppl.antialiasingMode == PostProcessLayer.Antialiasing.TemporalAntialiasing;
     }
 
     public static List<TextureImporter> GetOversizeTextureImporters(List<Renderer> renderers)

@@ -19,7 +19,7 @@ namespace VRC.SDKBase.Editor.Api
 
         public static T Add<T>(string key, T value)
         {
-            _cache[key] = (DateTime.Now, value);
+            _cache[key] = (DateTime.UtcNow, value);
             return value;
         }
 
@@ -27,7 +27,7 @@ namespace VRC.SDKBase.Editor.Api
         {
             if (_cache.TryGetValue(key, out var value))
             {
-                if (DateTime.Now.Subtract(value.timestamp).TotalMilliseconds < DEFAULT_CACHE_TIME)
+                if (DateTime.UtcNow.Subtract(value.timestamp).TotalMilliseconds < DEFAULT_CACHE_TIME)
                 {
                     cached = true;
                     return (T) value.data;

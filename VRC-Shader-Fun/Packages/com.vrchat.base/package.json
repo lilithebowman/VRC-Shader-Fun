@@ -1,7 +1,7 @@
 {
 	"name" : "com.vrchat.base",
 	"displayName" : "VRChat SDK - Base",
-	"version" : "3.5.0",
+	"version" : "3.5.1",
 	"unity" : "2022.3",
 	"description" : "Base for VRChat SDK",
 	"author" : {
@@ -15,6 +15,7 @@
 		"com.unity.mathematics" : "1.2.6",
 		"com.unity.nuget.newtonsoft-json" : "3.2.1",
 		"com.unity.xr.management" : "4.3.3",
-		"com.unity.xr.oculus" : "4.0.0"
+		"com.unity.xr.oculus" : "4.0.0",
+		"com.unity.postprocessing" : "3.2.2"
 	}
 }
