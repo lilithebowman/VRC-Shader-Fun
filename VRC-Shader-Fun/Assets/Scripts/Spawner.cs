@@ -20,7 +20,7 @@ public class Spawner : UdonSharpBehaviour {
             if (numberOfObjectsSpawned < maximumNumberOfSpawnedObjects) {
                 if (timeSinceLastSpawnedObject > frequencyToSpawnObjectsAt) {
                     // Spawn a Udon networked game object!
-
+                    Networking.Instantiate(VRC_EventHandler.VrcBroadcastType.Always, objectToBeSpawned.name, this.transform.position, this.transform.rotation);
 				}
 			}
 		}
