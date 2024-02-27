@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -9,7 +11,7 @@ public class Spawner : UdonSharpBehaviour {
     public GameObject objectToBeSpawned;
     public float frequencyToSpawnObjectsAt = 5.0f;
 
-    private int numberOfObjectsSpawned = 0;
+    private int objectsSpawned = 0;
     private float timeSinceLastSpawnedObject;
 
 	private void Start () {
@@ -17,11 +19,12 @@ public class Spawner : UdonSharpBehaviour {
 	}
 	void Update() {
         if (objectToBeSpawned) {
-            if (numberOfObjectsSpawned < maximumNumberOfSpawnedObjects) {
+            if (objectsSpawned < maximumNumberOfSpawnedObjects) {
                 if (timeSinceLastSpawnedObject > frequencyToSpawnObjectsAt) {
                     // Spawn a Udon networked game object!
-                    Networking.Instantiate(VRC_EventHandler.VrcBroadcastType.Always, objectToBeSpawned.name, this.transform.position, this.transform.rotation);
-				}
+                    GameObject newObject = VRCInstantiate(objectToBeSpawned);
+                    objectsSpawned++;
+                }
 			}
 		}
     }
