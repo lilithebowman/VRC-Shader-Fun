@@ -540,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 1297187715252609112, guid: ee8e748217fb66b4bad8c012e154164a,
         type: 3}
       propertyPath: maximumNumberOfSpawnedObjects
-      value: 150
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2175187615235498043, guid: ee8e748217fb66b4bad8c012e154164a,
         type: 3}
