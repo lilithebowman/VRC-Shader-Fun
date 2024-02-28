@@ -17,7 +17,7 @@ public class Spawner : UdonSharpBehaviour {
 
 	private void Start () {
         timeInterval = frequencyToSpawnObjectsAt;
-        timeSinceLastSpawnedObject = 0.0f;
+        timeSinceLastSpawnedObject = 10.0f;
 	}
 	void Update() {
         if (objectToBeSpawned) {

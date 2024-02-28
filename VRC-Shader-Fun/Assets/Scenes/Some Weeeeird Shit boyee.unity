@@ -535,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 1297187715252609112, guid: ee8e748217fb66b4bad8c012e154164a,
         type: 3}
       propertyPath: frequencyToSpawnObjectsAt
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1297187715252609112, guid: ee8e748217fb66b4bad8c012e154164a,
         type: 3}
@@ -769,6 +769,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107942500589540181, guid: 6b885e782affbd7488d9a88eff94a0fd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.92045
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107942500589540181, guid: 6b885e782affbd7488d9a88eff94a0fd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.44329792
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107942500589540181, guid: 6b885e782affbd7488d9a88eff94a0fd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
